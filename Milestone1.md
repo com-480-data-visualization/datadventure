@@ -27,8 +27,13 @@ We see, that the dataset has a lot of interesting features, which will (hopefull
 
 ![Features described](images/student_depression_dataset/Features_described.png)
 
+![Features boxplot](images/student_depression_dataset/Features_boxplot.png)
 
+![Features correlation matrix](images/student_depression_dataset/Features_correlation_matrix.png)
 
+After running a linear regression on the normalized data, we see that we in fact have features with a greater weight than other, such as financial stress, and some features with negative weight, like age.
+
+![alt text](images/Features_linreg_weight.png)
 
 ### Exploratory Data Analysis
 
