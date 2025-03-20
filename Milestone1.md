@@ -19,6 +19,8 @@ This dataset contains demographic statistics as well as mental health indicators
 
 ### [Student Stress Factors: A Comprehensive Analysis](https://www.kaggle.com/datasets/rxnach/student-stress-factors-a-comprehensive-analysis/data)
 
+
+
 This dataset contains 1100 rows where each row corresponds to a student survey reply with data with mental health indicators and lifestyle attributes in each column. The dataset requires very little preprocessing as it contains no null values as well as no duplicates. The values are straightforward as well, as they are mostly numerical, so anything besides normalizing is probably superfluous
 
 ![Features ](images/student_depression_dataset/Features.png)
@@ -36,6 +38,13 @@ After running a linear regression on the normalized data, we see that we in fact
 ![alt text](images/Features_linreg_weight.png)
 
 ### Exploratory Data Analysis
+
+![Features Correlation matrix ](images/Stress_factor_dataset/Corr_ment.png)
+
+![Features Correlation matrix ](images/Stress_factor_dataset/box_plots_distribution.png)
+
+When examining the factors of stress dataset, the box plots showed us how things like anxiety levels, self-esteem, and mental health history varied across the board. For instance, we noticed that mental health history and depression had a pretty wide range, meaning people had all sorts of different experiences.
+When we looked at the correlation matrix, we saw some clear patterns. Like, anxiety and stress levels were tightly linked—when one went up, the other usually followed. On the flip side, self-esteem and depression had a negative connection; lower self-esteem often meant higher depression levels, which would make sense intuitively.
 
 
 
