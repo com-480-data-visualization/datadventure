@@ -2,8 +2,14 @@
 
 ## Problematic
 
+It’s no secret that music can have profound impacts on a person’s mood and feelings. Music is frequently used in situations where a good mood is desired, like in bars, while dancing, while studying. And the inverse is true. What is a sad breakup without some music to accompany the process of getting over someone? This observation prompts us to ask the question, how are music and mental health correlated? Can you guess a person's self reported mental health if you know their music habits?
 
-## Datasetsand Exploratory Data Analysis
+We want to  “visualize the invisible”. Having a look at the datasets however revealed, that the invisible is invisible in the datasets as well. Thus, instead of provig the connection between music and mental health, we want to challenge the assumption that one exists. 
+
+Our interactive visualization will invite users to guess a persona’s mental health based on their music preferences. By showing how difficult it is to make accurate guesses, we aim to highlight the limitations of this assumptions. Following this, we will present data-driven visualizations of other factors that have been shown to correlate with mental health, encouraging users to rethink how well-being can (and cannot) be inferred from daily habits like music consumption.
+
+
+## Datasets and Exploratory Data Analysis
 
 ### [Mental disorders and music features](https://www.kaggle.com/datasets/chlobon/mental-disorders-and-music-features/data)
 
@@ -16,6 +22,12 @@ The Music & Mental Health Survey Results dataset consists of data about individu
 ### [Student Depression Dataset](https://www.kaggle.com/datasets/hopesb/student-depression-dataset?resource=download)
 
 This dataset contains demographic statistics as well as mental health indicators and a depression diagnosis for about 28 thousand university students and 18 people with a profession other than “student”. The mean age of the dataset is about 25. 
+
+![Features Correlation matrix ](images/Stress_factor_dataset/Corr_ment.png)
+
+
+When examining the factors of stress dataset, the box plots showed us how things like anxiety levels, self-esteem, and mental health history varied across the board. For instance, we noticed that mental health history and depression had a pretty wide range, meaning people had all sorts of different experiences.
+When we looked at the correlation matrix, we saw some clear patterns. Like, anxiety and stress levels were tightly linked—when one went up, the other usually followed. On the flip side, self-esteem and depression had a negative connection; lower self-esteem often meant higher depression levels, which would make sense intuitively.
 
 ### [Student Stress Factors: A Comprehensive Analysis](https://www.kaggle.com/datasets/rxnach/student-stress-factors-a-comprehensive-analysis/data)
 
@@ -35,20 +47,20 @@ We see, that the dataset has a lot of interesting features, which will (hopefull
 
 After running a linear regression on the normalized data, we see that we in fact have features with a greater weight than other, such as financial stress, and some features with negative weight, like age.
 
-![alt text](images/Features_linreg_weight.png)
-
-### Exploratory Data Analysis
-
-![Features Correlation matrix ](images/Stress_factor_dataset/Corr_ment.png)
-
-![Features Correlation matrix ](images/Stress_factor_dataset/box_plots_distribution.png)
-
-When examining the factors of stress dataset, the box plots showed us how things like anxiety levels, self-esteem, and mental health history varied across the board. For instance, we noticed that mental health history and depression had a pretty wide range, meaning people had all sorts of different experiences.
-When we looked at the correlation matrix, we saw some clear patterns. Like, anxiety and stress levels were tightly linked—when one went up, the other usually followed. On the flip side, self-esteem and depression had a negative connection; lower self-esteem often meant higher depression levels, which would make sense intuitively.
-
-
+![Features linear regression weights](images/student_depression_dataset/Features_linreg_weight.png)
 
 ### Related work
+
+Our datasets have been used in quite a few other data analysis projects online [1] [2] [3], however most of them don’t go further than simple presentations of statistics, and they generally don’t tell a thought-provoking story. By not focussing on a rigorous scientific exploration of the data, but rather visualizing correlations in a fun and artistic way, we hope to make the abstract link between music and feelings more graspable. We aim for a data story which evokes emotions and thought, similar to audible and tactile installations in museums, like Esther Shalev-Gerz’s White Out – Between Telling and Listening, which can be found in Lausanne’s Cantonal Museum of Fine Arts (MCBA) [2]
+
+
+[1]:  https://www.kaggle.com/datasets/catherinerasgaitis/mxmh-survey-results/code
+
+[2]: https://www.kaggle.com/datasets/hopesb/student-depression-dataset/code
+
+[3]: https://www.kaggle.com/datasets/rxnach/student-stress-factors-a-comprehensive-analysis/code
+
+[4]: https://www.mcba.ch/en/collection/white-out-between-telling-and-listening-2/
 
 
 
