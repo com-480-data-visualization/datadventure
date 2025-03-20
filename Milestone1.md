@@ -2,6 +2,12 @@
 
 ## Problematic
 
+It’s no secret that music can have profound impacts on a person’s mood and feelings. Music is frequently used in situations where a good mood is desired, like in bars, while dancing, while studying. And the inverse is true. What is a sad breakup without some music to accompany the process of getting over someone? This observation prompts us to ask the question, how are music and mental health correlated? Can you guess a person's self reported mental health if you know their music habits?
+
+We want to  “visualize the invisible”. Having a look at the datasets however revealed, that the invisible is invisible in the datasets as well. Thus, instead of provig the connection between music and mental health, we want to challenge the assumption that one exists. 
+
+Our interactive visualization will invite users to guess a persona’s mental health based on their music preferences. By showing how difficult it is to make accurate guesses, we aim to highlight the limitations of this assumptions. Following this, we will present data-driven visualizations of other factors that have been shown to correlate with mental health, encouraging users to rethink how well-being can (and cannot) be inferred from daily habits like music consumption.
+
 
 ## Datasetsand Exploratory Data Analysis
 
@@ -40,6 +46,13 @@ After running a linear regression on the normalized data, we see that we in fact
 
 
 ### Related work
+
+Our datasets have been used in quite a few other data analysis projects online [1], however most of them don’t go further than simple presentations of statistics, and they generally don’t tell a thought-provoking story. By not focussing on a rigorous scientific exploration of the data, but rather visualizing correlations in a fun and artistic way, we hope to make the abstract link between music and feelings more graspable. We aim for a data story which evokes emotions and thought, similar to audible and tactile installations in museums, like Esther Shalev-Gerz’s White Out – Between Telling and Listening, which can be found in Lausanne’s Cantonal Museum of Fine Arts (MCBA) [2]
+
+
+[1]:  https://www.kaggle.com/datasets/catherinerasgaitis/mxmh-survey-results/code
+
+[2]: https://www.mcba.ch/en/collection/white-out-between-telling-and-listening-2/
 
 
 
