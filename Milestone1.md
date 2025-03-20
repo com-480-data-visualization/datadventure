@@ -9,7 +9,7 @@ We want to  “visualize the invisible”. Having a look at the datasets however
 Our interactive visualization will invite users to guess a persona’s mental health based on their music preferences. By showing how difficult it is to make accurate guesses, we aim to highlight the limitations of this assumptions. Following this, we will present data-driven visualizations of other factors that have been shown to correlate with mental health, encouraging users to rethink how well-being can (and cannot) be inferred from daily habits like music consumption.
 
 
-## Datasetsand Exploratory Data Analysis
+## Datasets and Exploratory Data Analysis
 
 ### [Mental disorders and music features](https://www.kaggle.com/datasets/chlobon/mental-disorders-and-music-features/data)
 
@@ -17,16 +17,18 @@ The mental disorder and music features dataset contains 649.244 rows. We then pr
 
 ### [Music & Mental Health Survey Results](https://www.kaggle.com/datasets/catherinerasgaitis/mxmh-survey-results)
 
-The Music & Mental Health Survey Results dataset consists of data about individuals' music taste and their self-reported mental health. It consists of 736 rows and 33 columns, where one row represents one person, and the columns are features related to their music taste and behaviour, as well as their self reported mental health. After removing all rows with missing data and the columns timestamp and permission, we were left with 616 rows and 31 columns.
+The Music & Mental Health Survey Results dataset consists of data about individuals' music taste and their self-reported mental health. It is quite small, containing only about 600 samples after cleaning, however it includes data on each persons music taste and behaviour, as well as their self reported mental health. 
 
  When exploring the dataset Music & Mental Health Survey Results we found that some genres (like pop, rap, and rock) are more frequently listened to, while others (such as gospel or country) have higher counts of “never” or “rarely”. Listeners with rock  or metal as their favourite genre seems overrepresented in the dataset. Most people use Spotify to stream.
 
  ![Distribution Streaming and Fav Genre](images/music_and_mental_health_dataset/distribution_streaming_and_fav_genre_mxmh.png)
 
  When examining mental health by favorite genre, we see that no single genre consistently reports exclusively high or low scores. This indicates that mental health experiences vary significantly within each listener group. 
+
  ![Box Plot Genre and Mental Health](images/music_and_mental_health_dataset/box_plot_genre_mental_health_mxmh.png)
  
  The correlation matrix confirms that the strongest correlations occur among the different self-reported mental health measures themselves and among the frequencies of listening to various genres, rather than between mental health and specific genre preferences.
+ 
  ![Correlation Matrix - Music and Mental Health](images/music_and_mental_health_dataset/correlation_matrix_mxmh.png)
 
 ### [Student Depression Dataset](https://www.kaggle.com/datasets/hopesb/student-depression-dataset?resource=download)
@@ -48,12 +50,7 @@ We see, that the dataset has a lot of interesting features, which will (hopefull
 ![Features correlation matrix](images/student_depression_dataset/Features_correlation_matrix.png)
 
 After running a linear regression on the normalized data, we see that we in fact have features with a greater weight than other, such as financial stress, and some features with negative weight, like age.
-
-![alt text](images/Features_linreg_weight.png)
-
-### Exploratory Data Analysis
-
-
+![Features linear regression weights](images/student_depression_dataset/Features_linreg_weight.png)
 
 ### Related work
 
