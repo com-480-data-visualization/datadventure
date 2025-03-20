@@ -11,7 +11,17 @@ The mental disorder and music features dataset contains 649.244 rows. We then pr
 
 ### [Music & Mental Health Survey Results](https://www.kaggle.com/datasets/catherinerasgaitis/mxmh-survey-results)
 
-The Music & Mental Health Survey Results dataset consists of data about individuals' music taste and their self-reported mental health. It consists of 736 rows and 33 columns, where one row represents one person, and the columns are features related to their music taste and behaviour, as well as their self reported mental health. After removing all rows with missing data, we were left with 616 rows. We dropped the timestamp and permission columns as we don’t need this data. We end up with a dataset which consists of 616 rows and 31 columns.
+The Music & Mental Health Survey Results dataset consists of data about individuals' music taste and their self-reported mental health. It consists of 736 rows and 33 columns, where one row represents one person, and the columns are features related to their music taste and behaviour, as well as their self reported mental health. After removing all rows with missing data and the columns timestamp and permission, we were left with 616 rows and 31 columns.
+
+ When exploring the dataset Music & Mental Health Survey Results we found that some genres (like pop, rap, and rock) are more frequently listened to, while others (such as gospel or country) have higher counts of “never” or “rarely”. Listeners with rock  or metal as their favourite genre seems overrepresented in the dataset. Most people use Spotify to stream.
+
+ ![Distribution Streaming and Fav Genre](images/music_and_mental_health_dataset/distribution_streaming_and_fav_genre_mxmh.png)
+
+ When examining mental health by favorite genre, we see that no single genre consistently reports exclusively high or low scores. This indicates that mental health experiences vary significantly within each listener group. 
+ ![Box Plot Genre and Mental Health](images/music_and_mental_health_dataset/box_plot_genre_mental_health_mxmh.png)
+ 
+ The correlation matrix confirms that the strongest correlations occur among the different self-reported mental health measures themselves and among the frequencies of listening to various genres, rather than between mental health and specific genre preferences.
+ ![Correlation Matrix - Music and Mental Health](images/music_and_mental_health_dataset/correlation_matrix_mxmh.png)
 
 ### [Student Depression Dataset](https://www.kaggle.com/datasets/hopesb/student-depression-dataset?resource=download)
 
