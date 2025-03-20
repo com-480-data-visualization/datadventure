@@ -3,7 +3,7 @@
 ## Problematic
 
 
-## Datasets and Exploratory Data Analysis
+## Datasetsand Exploratory Data Analysis
 
 ### [Mental disorders and music features](https://www.kaggle.com/datasets/chlobon/mental-disorders-and-music-features/data)
 
@@ -21,7 +21,11 @@ This dataset contains demographic statistics as well as mental health indicators
 
 This dataset contains 1100 rows where each row corresponds to a student survey reply with data with mental health indicators and lifestyle attributes in each column. The dataset requires very little preprocessing as it contains no null values as well as no duplicates. The values are straightforward as well, as they are mostly numerical, so anything besides normalizing is probably superfluous
 
+![Features ](images/student_depression_dataset/Features.png)
 
+We see, that the dataset has a lot of interesting features, which will (hopefully) help us find correlations between lifestyle and depression.
+
+![Features described](images/student_depression_dataset/Features_described.png)
 
 
 
