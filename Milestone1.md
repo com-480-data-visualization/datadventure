@@ -47,12 +47,16 @@ After running a linear regression on the normalized data, we see that we in fact
 
 ### Related work
 
-Our datasets have been used in quite a few other data analysis projects online [1], however most of them don’t go further than simple presentations of statistics, and they generally don’t tell a thought-provoking story. By not focussing on a rigorous scientific exploration of the data, but rather visualizing correlations in a fun and artistic way, we hope to make the abstract link between music and feelings more graspable. We aim for a data story which evokes emotions and thought, similar to audible and tactile installations in museums, like Esther Shalev-Gerz’s White Out – Between Telling and Listening, which can be found in Lausanne’s Cantonal Museum of Fine Arts (MCBA) [2]
+Our datasets have been used in quite a few other data analysis projects online [1] [2] [3], however most of them don’t go further than simple presentations of statistics, and they generally don’t tell a thought-provoking story. By not focussing on a rigorous scientific exploration of the data, but rather visualizing correlations in a fun and artistic way, we hope to make the abstract link between music and feelings more graspable. We aim for a data story which evokes emotions and thought, similar to audible and tactile installations in museums, like Esther Shalev-Gerz’s White Out – Between Telling and Listening, which can be found in Lausanne’s Cantonal Museum of Fine Arts (MCBA) [2]
 
 
 [1]:  https://www.kaggle.com/datasets/catherinerasgaitis/mxmh-survey-results/code
 
-[2]: https://www.mcba.ch/en/collection/white-out-between-telling-and-listening-2/
+[2]: https://www.kaggle.com/datasets/hopesb/student-depression-dataset/code
+
+[3]: https://www.kaggle.com/datasets/rxnach/student-stress-factors-a-comprehensive-analysis/code
+
+[4]: https://www.mcba.ch/en/collection/white-out-between-telling-and-listening-2/
 
 
 
