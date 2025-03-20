@@ -15,9 +15,24 @@ Our interactive visualization will invite users to guess a persona’s mental he
 
 The mental disorder and music features dataset contains 649.244 rows. We then proceed to observe the data and find that some songs are the same but with Remastered or the year in the name, so we eliminate the suffixes to make them the same. We then proceeded to eliminate all the rows which had missing data(around a 10000), and were left with 526680 rows. We checked for duplicate rows but found none .We finally dropped columns that were relied on for formatting, and would be useless for our analysis. After this we were left with 526680 clean rows corresponding to a user, a song title, music characteristics  and the mental disorder of the user.
 
+![Features ](images/Stress_factor_dataset/disorder_count.png)
+![Features ](images/Stress_factor_dataset/correlation_matrix_heatmap.png)
+
 ### [Music & Mental Health Survey Results](https://www.kaggle.com/datasets/catherinerasgaitis/mxmh-survey-results)
 
-The Music & Mental Health Survey Results dataset consists of data about individuals' music taste and their self-reported mental health. It consists of 736 rows and 33 columns, where one row represents one person, and the columns are features related to their music taste and behaviour, as well as their self reported mental health. After removing all rows with missing data, we were left with 616 rows. We dropped the timestamp and permission columns as we don’t need this data. We end up with a dataset which consists of 616 rows and 31 columns.
+The Music & Mental Health Survey Results dataset consists of data about individuals' music taste and their self-reported mental health. It is quite small, containing only about 600 samples after cleaning, however it includes data on each persons music taste and behaviour, as well as their self reported mental health. 
+
+ When exploring the dataset Music & Mental Health Survey Results we found that some genres (like pop, rap, and rock) are more frequently listened to, while others (such as gospel or country) have higher counts of “never” or “rarely”. Listeners with rock  or metal as their favourite genre seems overrepresented in the dataset. Most people use Spotify to stream.
+
+ ![Distribution Streaming and Fav Genre](images/music_and_mental_health_dataset/distribution_streaming_and_fav_genre_mxmh.png)
+
+ When examining mental health by favorite genre, we see that no single genre consistently reports exclusively high or low scores. This indicates that mental health experiences vary significantly within each listener group. 
+
+ ![Box Plot Genre and Mental Health](images/music_and_mental_health_dataset/box_plot_genre_mental_health_mxmh.png)
+ 
+ The correlation matrix confirms that the strongest correlations occur among the different self-reported mental health measures themselves and among the frequencies of listening to various genres, rather than between mental health and specific genre preferences.
+ 
+ ![Correlation Matrix - Music and Mental Health](images/music_and_mental_health_dataset/correlation_matrix_mxmh.png)
 
 ### [Student Depression Dataset](https://www.kaggle.com/datasets/hopesb/student-depression-dataset?resource=download)
 
@@ -25,6 +40,7 @@ This dataset contains demographic statistics as well as mental health indicators
 
 ![Features Correlation matrix ](images/Stress_factor_dataset/Corr_ment.png)
 
+![Features Correlation matrix ](images/Stress_factor_dataset/box_plots_distribution.png)
 
 When examining the factors of stress dataset, the box plots showed us how things like anxiety levels, self-esteem, and mental health history varied across the board. For instance, we noticed that mental health history and depression had a pretty wide range, meaning people had all sorts of different experiences.
 When we looked at the correlation matrix, we saw some clear patterns. Like, anxiety and stress levels were tightly linked—when one went up, the other usually followed. On the flip side, self-esteem and depression had a negative connection; lower self-esteem often meant higher depression levels, which would make sense intuitively.
