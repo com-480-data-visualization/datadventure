@@ -10,9 +10,9 @@
 
 ## Milestone 1
 
-[The link to our Milestone 1 markdown can be found here.](./Milestone1.md)
+[The link to our Milestone 1 markdown can be found here.](./Milestone1/Milestone1.md)
 
-The notebooks used for our exploratory data analyses can be found in this folder
+[The notebooks used for our exploratory data analyses can be found in this folder.](./Milestone1/)
 
 ## Milestone 2 (18th April, 5pm)
 
