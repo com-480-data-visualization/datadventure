@@ -4,25 +4,26 @@
 
 It’s no secret that music can have profound impacts on a person’s mood and feelings. Music is frequently used in situations where a good mood is desired, like in bars, while dancing, while studying. And the inverse is true. What is a sad breakup without some music to accompany the process of getting over someone? This observation prompts us to ask the question, how are music and mental health correlated? Can you guess a person's self reported mental health if you know their music habits?
 
-We want to  “visualize the invisible”. Having a look at the datasets however reveals, that the invisible is invisible in the datasets as well. Thus, instead of proving the connection between music and mental health, we want to challenge the assumption that one exists. 
+We want to  “visualize the invisible”. Having a look at the datasets however reveals, that the invisible is invisible in the datasets as well. Thus, instead of showing the connection between music and mental health, we will challenge the assumption that one exists. 
 
-Our interactive visualization will invite users to guess a persona’s mental health based on their music preferences. By showing how difficult it is to make accurate guesses, we aim to highlight that music habits and mental health are not correlated, thus challening the preconcieved notion that they are. Following this, we will present data-driven visualizations of other factors that have been shown to correlate with mental health, encouraging users to rethink how well-being can (and cannot) be inferred from daily habits like music consumption.
+Our interactive visualization will invite users to guess a persona’s mental health based on their music preferences. By showing how difficult it is to make accurate guesses, we aim to highlight that music habits and mental health are not correlated, thus challening the preconcieved notion that they are. Following this, we will present data-driven visualizations of other factors that have been shown to correlate with mental health, encouraging users to rethink how well-being can (and cannot) be inferred from daily habits.
 
 
 ## Datasets and Exploratory Data Analysis
 
 ### [Mental disorders and music features](https://www.kaggle.com/datasets/chlobon/mental-disorders-and-music-features/data)
 
-This dataset contains user and song pairs, each row representing a user listening to a song. The data is quite dirty, containing duplicates and missing data. After cleaning, we are left with about 500.000 songs, each corresponding to a user, a song title, characteristics of the song and the mental disorder of the user.
+This dataset contains user and song pairs, each row representing a user listening to a song. Each entry in the dataset has a user ID, a song title, characteristics of the song and the mental disorder of the user. The data is quite dirty, containing duplicates and missing data. After cleaning, we are left with about 500.000 song, user pairs. 
 
 ![Features ](images/mental_disorders_and_music_features/disorder_count.png)
+
 ![Features ](images/mental_disorders_and_music_features/correlation_matrix_heatmap.png)
 
-We see, that the strongest correlations occur within the song characteristics and among the different mental health issues. 
+We see, that the strongest correlations occur within the song characteristics and among the different mental health issues, however little correlation can be seen between mental health issues and music features.
 
 ### [Music & Mental Health Survey Results](https://www.kaggle.com/datasets/catherinerasgaitis/mxmh-survey-results)
 
-The Music & Mental Health Survey Results dataset consists of data about individuals' music taste and their self-reported mental health. After cleaning, it consists of about 600 rows. For each sample the dataset contains features related to  music taste and behaviour, as well as self reported mental health.
+The Music & Mental Health Survey Results dataset consists of data about individuals' music taste and their self-reported mental health. After cleaning, it contains about 600 rows. For each sample the dataset contains features related to  music taste and behaviour, as well as self reported mental health.
 
  When exploring the dataset Music & Mental Health Survey Results we found that some genres (like pop, rap, and rock) are more frequently listened to. Listeners with rock  or metal as their favourite genre seems overrepresented in the dataset. Most people use Spotify to stream.
 
