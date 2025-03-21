@@ -15,8 +15,8 @@ Our interactive visualization will invite users to guess a persona’s mental he
 
 This dataset contains user and song pairs, each row representing a user listening to a song. The data is quite dirty, containing duplicates and missing data. After cleaning, we are left with about 500.000 songs, each corresponding to a user, a song title, characteristics of the song and the mental disorder of the user.
 
-![Features ](images/Stress_factor_dataset/disorder_count.png)
-![Features ](images/Stress_factor_dataset/correlation_matrix_heatmap.png)
+![Features ](images/mental_disorders_and_music_features/disorder_count.png)
+![Features ](images/mental_disorders_and_music_features/correlation_matrix_heatmap.png)
 
 We see, that the strongest correlations occur within the song characteristics and among the different mental health issues. 
 
