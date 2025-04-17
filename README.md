@@ -19,6 +19,7 @@
 **10% of the final grade**
 
 [Our PDF for Milestone 2 can be found here](./Milestone2/COM480%20Data%20Visualization%20-%20Milestone%202.pdf)
+
 [Our website prototype can be found here](https://com-480-data-visualization.github.io/datadventure/)
 
 ## Milestone 3 (30th May, 5pm)
