@@ -130,14 +130,29 @@
 					</div>
 					<div class="row">
 						<div class="col-12">
-							<a href="#" class="image-link">
-								<img src="images/anxiety.png" alt="Music Habits" class="stacked-image wide-banner" />
-							</a>
+							<label for="genre-select">Choose a genre:</label>
+							<div id="genre-list"></div>
+						</div>
+					</div>
+
+					<div id="chart-container"
+						style="position: relative; width: 80%; max-width: 800px; margin: 0 auto;">
+						<svg id="mental-health-chart" width="100%" height="600"></svg>
+
+						<div id="legend-overlay" style="
+						  position: absolute;
+						  top: 20px;
+						  right: -120px;
+						  padding: 10px;">
 						</div>
 					</div>
 				</div>
 			</div>
 			<a href="#four" class="goto-next scrolly">Next</a>
+
+			<!-- D3 Script -->
+			<script src="https://d3js.org/d3.v7.min.js"></script>
+			<script src="assets/js/explore_dataset_graph.js"></script>
 		</section>
 
 

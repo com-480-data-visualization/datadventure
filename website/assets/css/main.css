@@ -4192,3 +4192,31 @@ input, select, textarea {
     display: block;
     margin-bottom: 20px;
 }
+
+/* List of genres in the exploratory graph */
+#genre-list {
+	display: flex;
+	flex-wrap: wrap;              /* Allow items to wrap to the next line */
+	justify-content: center;
+	align-items: center;          /* Center items vertically */
+	margin-bottom: 20px; /* Space between the list and the chart */
+  }
+  
+  .genre-item {
+	margin: 10px 40px;
+	cursor: pointer;
+	transition: transform 0.3s ease, font-weight 0.3s ease, color 0.3s ease;
+
+  }
+
+  .genre-item:hover {
+	transform: scale(1.6);
+  }
+  
+  /* Style for the selected genre */
+  .genre-item.selected {
+	font-weight: bold;
+	transform: scale(1.6);
+
+  }
+  
