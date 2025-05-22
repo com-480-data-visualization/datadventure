@@ -1,7 +1,26 @@
 <!DOCTYPE HTML>
 
 <html>
+<style>
+ #vizualisation {
+	 width: 100%;
+	 height: 300px;
+	 background-color: rgba(255, 255, 255, 0.05);
+	 border: 3px dashed red;
+	 position: relative;
+	 z-index: 9999; /* Bring it above everything */
+ }
 
+ #four {
+	 position: relative;
+	 z-index: 1;
+	 background: none !important;
+ }
+
+ .spotlight.style3.left::before {
+	 display: none !important; /* removes background image layer if present */
+ }
+</style>
 <head>
 	<title>Music and mental health by datadventure</title>
 	<meta charset="utf-8" />
@@ -159,26 +178,19 @@
 		<!-- Three -->
 		<!-- Three -->
 		<section id="four" class="spotlight style3 left">
-			<div class="content-wrapper">
-				<div class="image-container">
-					<img src="images/feature_imp1.png" alt="" class="feature-image" />
-				</div>
-				<div class="content">
-					<header>
-						<h2>Factors actually correlating with Depression</h2>
-					</header>
-					<p>
-						<span style="color: red;">Positive correlation with Depression</span><br>
-						<span style="color: blue;">Negative correlation with Depression</span><br>
-						<span style="color: white;">Size: How much?</span>
-					</p>
-					<ul class="actions">
-						<li><a href="#" class="button">Learn More</a></li>
-					</ul>
-				</div>
-			</div>
-			<a href="#five" class="goto-next scrolly">Next</a>
-		</section>
+
+			<div id="vizualisation"></div>
+
+			<div id="legend-banner">
+<h2>Factors Correlating with Depression</h2>
+<p>
+	<span class="legend red">positive correlation</span>
+	<span class="legend blue">negative correlation</span>
+	<span class="legend white">radius = Correlation factor</span>
+</p>
+</div>
+<a href="#five" class="goto-next scrolly">Next</a>
+	</section>
 
 
 		<section id="five" class="spotlight style3 right">
