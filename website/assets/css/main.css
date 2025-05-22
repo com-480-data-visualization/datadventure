@@ -3085,8 +3085,14 @@ input[type="button"]:disabled,
 	background-size: cover;
 	box-shadow: 0 0.25em 0.5em 0 rgba(0, 0, 0, 0.25);
 	min-height: 100vh;
-	overflow: hidden;
+	overflow: auto;
 	position: relative;
+}
+
+/* Used in section three bc the content would be cropped when the site is too 
+zoomed in without. Dont ask my why this works. */
+#three.spotlight {
+    min-height: 1000px;
 }
 
 .spotlight:nth-last-of-type(1) {
