@@ -3084,7 +3084,7 @@ input[type="button"]:disabled,
 	background-position: center center;
 	background-size: cover;
 	box-shadow: 0 0.25em 0.5em 0 rgba(0, 0, 0, 0.25);
-/*	height: 100vh;*/
+	min-height: 100vh;
 	overflow: hidden;
 	position: relative;
 }
@@ -4386,43 +4386,3 @@ body.is-touch #banner {
 	transform: scale(1.6);
 
 }
-
-}
-
-#legend-banner {
-  background-color: #333;
-  padding: 20px;
-  text-align: center;
-  color: white;
-  font-family: sans-serif;
-}
-
-#legend-banner h2 {
-  margin-bottom: 10px;
-  font-size: 24px;
-}
-
-.legend {
-  display: inline-block;
-  margin: 0 10px;
-  font-weight: bold;
-  font-size: 16px;
-}
-
-.legend.red {
-  color: #800020; /* bordeaux */
-}
-
-.legend.blue {
-  color: #001f3f; /* navy */
-}
-
-.legend.white {
-  color: white;
-}
-
-  #vizualisation {
-    width: 100%;
-    height: 80%;
-    background-color: #1c1d26; /* dark bg to contrast circles */
-  }
