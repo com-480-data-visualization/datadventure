@@ -3089,12 +3089,6 @@ input[type="button"]:disabled,
 	position: relative;
 }
 
-/* Used in section three bc the content would be cropped when the site is too 
-zoomed in without. Dont ask my why this works. */
-#three.spotlight {
-    min-height: 1000px;
-}
-
 .spotlight:nth-last-of-type(1) {
 	z-index: 1;
 }
