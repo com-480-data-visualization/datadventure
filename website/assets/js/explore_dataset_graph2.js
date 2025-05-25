@@ -32,24 +32,17 @@ Promise.all([
         wrapper.append("div")
             .style("width", "100px")
             .style("text-align", "left")
+            .style("margin-right", "20px")
             .text(name);
 
-        // Current value
-        const valueDisplay = wrapper.append("div")
-            .style("width", "30px")
-            .style("text-align", "right")
-            .style("margin-right", "10px")
-            .style("font-weight", "bold")
-            .text((featureValues[name]).toFixed(1));
-
         // Min value
-        const minVal = name === "key" ? 0 : -1;
-        const maxVal = name === "key" ? 11 : 1;
+        const minVal = name === "key" ? 0.0 : -1.0;
+        const maxVal = name === "key" ? 11.0 : 1.0;
 
         wrapper.append("div")
             .style("width", "20px")
             .style("text-align", "right")
-            .text(minVal);
+            .text(minVal.toFixed(1));
 
         // Slider
         const slider = wrapper.append("input")
@@ -66,7 +59,6 @@ Promise.all([
             .style("border-radius", "1px")
             .on("input", function () {
                 featureValues[name] = +this.value;
-                valueDisplay.text((+this.value).toFixed(1));
                 updatePredictionChart();
             });
 
@@ -74,7 +66,7 @@ Promise.all([
         wrapper.append("div")
             .style("width", "20px")
             .style("text-align", "left")
-            .text(maxVal);
+            .text(maxVal.toFixed(1));
     });
 
 
@@ -116,11 +108,36 @@ Promise.all([
             .attr("width", xP.bandwidth())
             .attr("y", d => yP(d.value))
             .attr("height", d => heightP - yP(d.value))
-            .attr("fill", d => d.label === "Anxiety" ? "#be5504" : "#123456");
+            .attr("fill", d => d.label === "Anxiety" ? "#be5504" : "#123456")
+            .attr("fill-opacity", 0.6)
+            .attr("stroke", d => d.label === "Anxiety" ? "#be5504" : "#123456")
+            .attr("stroke-width", 2);
+
 
         bars.exit().remove();
     }
 
+    // Legend
+    const legendData_2 = [
+        { label: "likelihood of anxiety", color: "#be5504" },
+        { label: "likelohood of depression", color: "#123456" }
+    ];
 
+    const legend_2 = d3.select("#legend-overlay_2");
+
+    legend_2.selectAll(".legend-item")
+        .data(legendData_2)
+        .enter()
+        .append("div")
+        .attr("class", "legend-item")
+        .style("display", "flex")
+        .style("align-items", "center")
+        .style("margin-bottom", "4px")
+        .html(d => `
+      <div style="width: 12px; height: 12px; background:${d.color}; border: 1px solid black; margin-right: 6px;"></div>
+      <span>${d.label}</span>
+    `);
+
+    console.log("Legend added:", legend_2.selectAll(".legend-item").size());
 
 }).catch(error => console.error("Failed to load models", error));

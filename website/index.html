@@ -145,8 +145,7 @@
 						<div class="col-12">
 							<header>
 								<h2>Find out how music habits affect Depression and anxiety</h2>
-								<p>Play with the different sliders and see how music features predict a user's Mental
-									Health.
+								<p>Choose some genres and explore how this affects the mental health of listeners.
 								</p>
 							</header>
 						</div>
@@ -171,37 +170,49 @@
 				</div>
 			</div>
 			<a href="#four" class="goto-next scrolly">Next</a>
-
 			<!-- D3 Script -->
 			<script src="https://d3js.org/d3.v7.min.js"></script>
 			<script src="assets/js/explore_dataset_graph.js"></script>
 		</section>
 
 		<!-- Four -->
-		<section id="four" class="spotlight style3 top", style="width:100%; max-width:100%">
+		<section id="four" class="spotlight style3 top mb-10" style="width: 100%; max-width: 100%; height: auto; overflow: visible; margin-bottom: 75px;">
 
 			<div class="content">
 				<div class="container">
 
 					<div class="row">
+						<div class="col-12">
+							<header>
+								<h2>Explore some more.</h2>
+								<p>Play with the different sliders and see how music features predict a user's mental
+									health.
+								</p>
+							</header>
+						</div>
+					</div>
+					<div class="row">
 						<div class="col-md-4">
 							<div id="sliders"></div>
 						</div>
 						<div class="col-md-8">
-							<svg id="prediction-chart" width="400" height="300"></svg>
+							<div id="chart-container"
+								style="position: relative; width: 100%; max-width: 800px; margin: 0 auto;">
+								<svg id="prediction-chart" width="700" height="500"></svg>
 
-
+								<div id="legend-overlay_2" style="
+									position: absolute;
+									top: 20px;
+									right: -120px;
+									padding: 10px;">
+								</div>
+							</div>
 						</div>
-
 					</div>
-
 				</div>
-			</div>
-			<a href="#five" class="goto-next scrolly">Next</a>
-
-			<script src="https://d3js.org/d3.v7.min.js"></script>
-			<script src="assets/js/explore_dataset_graph2.js"></script>
-
+				<a href="#five" class="goto-next scrolly">Next</a>
+				<script src="https://d3js.org/d3.v7.min.js"></script>
+				<script src="assets/js/explore_dataset_graph2.js"></script>
 		</section>
 
 		<!-- Five -->

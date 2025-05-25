@@ -54,7 +54,7 @@ d3.csv("data/mxmh_survey_results.csv", d => ({
     });
   });
 
-  const x = d3.scaleBand().domain(["Depression", "Anxiety"]).range([0, chartWidth]).padding(0.4);
+  const x = d3.scaleBand().domain(["Anxiety", "Depression"]).range([0, chartWidth]).padding(0.4);
   const y = d3.scaleLinear().range([chartHeight, 0]).domain([0, 10]);
 
   const xAxis = chart.append("g").attr("transform", `translate(0,${chartHeight})`);
