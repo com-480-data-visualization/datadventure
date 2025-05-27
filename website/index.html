@@ -103,13 +103,8 @@
 			</div>
 		</section>
 
-
-
-
-
-
 		<section id="two" class="spotlight style1 bottom">
-			<div class="content">
+			<!-- <div class="content">
 				<div class="container">
 					<div class="row">
 						<div class="col-12">
@@ -132,7 +127,114 @@
 						</div>
 					</div>
 				</div>
+			</div> -->
+			<style>
+				#staff-slider-container {
+					position: relative;
+					width: 80%;
+					max-width: 600px;
+					margin: 40px auto 0;
+				}
+
+				.staff-lines {
+					position: absolute;
+					top: 0;
+					left: 0;
+					right: 0;
+					height: 80px;
+					display: flex;
+					flex-direction: column;
+					justify-content: space-between;
+					z-index: 0;
+				}
+
+				.staff-lines div {
+					height: 2px;
+					background-color: grey;
+					width: 100%;
+				}
+
+				.staff-lines div {
+					display: block;
+				}
+
+				.staff-lines {
+					z-index: 0;
+				}
+
+				#music-slider {
+					position: relative;
+					z-index: 1;
+					width: 100%;
+					margin: 20px 0 20px 0;
+					-webkit-appearance: none;
+					background: none;
+				}
+
+				#music-slider::-webkit-slider-thumb {
+					-webkit-appearance: none;
+					background: url('images/GClef.svg') no-repeat center;
+					background-size: contain;
+					width: 30px;
+					height: 100px;
+					cursor: pointer;
+					border: none;
+					margin-top: -30px;
+				}
+
+				.slider-labels {
+					display: flex;
+					justify-content: space-between;
+					font-size: 1.2rem;
+					margin-top: 5px;
+				}
+
+				.slider-labels span {
+					width: 10%;
+					text-align: center;
+				}
+			</style>
+
+			<div class="content">
+				<div class="container" style="padding-bottom: 50px;">
+
+					<div class="row">
+						<div class="col-12">
+							<header>
+								<h2>Take a second and reflect: How much do you think music impacts the mental health of listeners?</h2>
+							</header>
+						</div>
+					</div>
+
+					<div id="hypothesis-content" style="opacity: 0; transition: opacity 2s ease;">
+						<div id="staff-slider-container">
+							<div class="staff-lines">
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+							</div>
+							<input type="range" id="music-slider" min="0" max="4" step="0.01" />
+							<div class="slider-labels">
+								<span>nothing</span>
+								<span>minimal</span>
+								<span>some</span>
+								<span>a lot</span>
+								<span>everything</span>
+							</div>
+						</div>
+						<p id="hypothesis-header" style="padding-top: 20px; font-size: 1.2rem;">Move the slider
+							depending on your hypothesis</p>
+						<p id="hypothesis" style="font-size: 1.2rem;  opacity: 0; transition: opacity 2s ease;">nothing
+						</p>
+						<p id="hypothesis-followup" style="font-size: 1.2rem; opacity: 0; transition: opacity 2s ease;">
+							Scroll to explore your hypothesis!</p>
+					</div>
+				</div>
 			</div>
+			<!-- D3 script-->
+			<script src="assets/js/slider_message.js"></script>
 			<a href="#three" class="goto-next scrolly">Next</a>
 		</section>
 
@@ -176,7 +278,8 @@
 		</section>
 
 		<!-- Four -->
-		<section id="four" class="spotlight style3 top mb-10" style="width: 100%; max-width: 100%; height: auto; overflow: visible; margin-bottom: 75px;">
+		<section id="four" class="spotlight style3 top mb-10"
+			style="width: 100%; max-width: 100%; height: auto; overflow: visible; margin-bottom: 75px;">
 
 			<div class="content">
 				<div class="container">
