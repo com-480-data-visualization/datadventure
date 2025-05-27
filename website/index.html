@@ -104,30 +104,6 @@
 		</section>
 
 		<section id="two" class="spotlight style1 bottom">
-			<!-- <div class="content">
-				<div class="container">
-					<div class="row">
-						<div class="col-12">
-							<header>
-								<h2>How much do you think music impacts the mental health of listeners?</h2>
-							</header>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-12">
-							<a href="#" class="image-link">
-								<img src="images/music.jpg" alt="Music Impact" class="stacked-image" />
-							</a>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-12">
-							<label for="hypothesis">Your hypothesis:</label>
-							<input type="text" id="hypothesis" name="hypothesis" class="text-box" />
-						</div>
-					</div>
-				</div>
-			</div> -->
 			<style>
 				#staff-slider-container {
 					position: relative;
@@ -152,46 +128,40 @@
 					height: 2px;
 					background-color: grey;
 					width: 100%;
-				}
-
-				.staff-lines div {
 					display: block;
-				}
-
-				.staff-lines {
-					z-index: 0;
 				}
 
 				#music-slider {
 					position: relative;
 					z-index: 1;
 					width: 100%;
-					margin: 20px 0 20px 0;
+					margin: 60px 0 20px 0;
 					-webkit-appearance: none;
 					background: none;
 				}
 
 				#music-slider::-webkit-slider-thumb {
 					-webkit-appearance: none;
-					background: url('images/GClef.svg') no-repeat center;
-					background-size: contain;
-					width: 30px;
-					height: 100px;
-					cursor: pointer;
+					width: 0;
+					height: 0;
+				}
+
+				#music-slider::-moz-range-thumb {
+					width: 0;
+					height: 0;
 					border: none;
-					margin-top: -30px;
 				}
 
-				.slider-labels {
-					display: flex;
-					justify-content: space-between;
-					font-size: 1.2rem;
-					margin-top: 5px;
-				}
-
-				.slider-labels span {
-					width: 10%;
-					text-align: center;
+				/* 🎵 Moving note icon */
+				#note-icon {
+					position: absolute;
+					left: 0;
+					top: 80px;
+					width: 35px;
+					cursor: pointer;
+					transition: transform 0.1s linear;
+					pointer-events: auto;
+					z-index: 2;
 				}
 			</style>
 
@@ -201,7 +171,8 @@
 					<div class="row">
 						<div class="col-12">
 							<header>
-								<h2>Take a second and reflect: How much do you think music impacts the mental health of listeners?</h2>
+								<h2>Take a second and reflect: How much do you think music impacts the mental health of
+									listeners?</h2>
 							</header>
 						</div>
 					</div>
@@ -215,13 +186,16 @@
 								<div></div>
 								<div></div>
 							</div>
-							<input type="range" id="music-slider" min="0" max="4" step="0.01" />
-							<div class="slider-labels">
-								<span>nothing</span>
-								<span>minimal</span>
-								<span>some</span>
-								<span>a lot</span>
-								<span>everything</span>
+
+							<input type="range" id="music-slider" min="0" max="3" step="0.1" value="0"/>
+							<img id="note-icon" src="images/WholeNote.svg" alt="Note" draggable="false"/>
+
+
+							<div class="slider-labels" style="display: flex; justify-content: space-between; width: 100%; font-size: 1.2rem; padding-top: 10px;">
+								<span>barely</span>
+								<span>slightly</span>
+								<span>moderately</span>
+								<span>greatly</span>
 							</div>
 						</div>
 						<p id="hypothesis-header" style="padding-top: 20px; font-size: 1.2rem;">Move the slider
@@ -234,7 +208,7 @@
 				</div>
 			</div>
 			<!-- D3 script-->
-			<script src="assets/js/slider_message.js"></script>
+			<script src="assets/js/hypothesis_section.js"></script>
 			<a href="#three" class="goto-next scrolly">Next</a>
 		</section>
 
