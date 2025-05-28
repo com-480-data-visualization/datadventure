@@ -1,15 +1,17 @@
 const slider = document.getElementById("music-slider");
+const note = document.getElementById("note-icon");
+const staff = document.querySelector(".staff-lines");
+const container = document.getElementById("staff-slider-container");
 const hypothesisHeaderEl = document.getElementById("hypothesis-header");
 const hypothesisEl = document.getElementById("hypothesis");
 const hypothesisFollowupEl = document.getElementById("hypothesis-followup");
+const staffHeight = 80;
 const clefOffset = 60;
 
-
-window.addEventListener("load", () => {
-    setTimeout(() => {
-        document.getElementById("hypothesis-content").style.opacity = 1;
-    }, 4000);
-});
+let lastSnappedValue = null;
+let isDragging = false;
+let isFading = false;
+let nextSnappedValue = null;
 
 const messages = [
     "You believe music says nothing about mental health.",
@@ -18,10 +20,6 @@ const messages = [
     "You believe a lot can be inferred from music.",
 ];
 
-const note = document.getElementById("note-icon");
-const container = document.getElementById("staff-slider-container");
-
-let isDragging = false;
 
 note.addEventListener("mousedown", (e) => {
     isDragging = true;
@@ -29,30 +27,24 @@ note.addEventListener("mousedown", (e) => {
 });
 
 window.addEventListener("mouseup", () => {
-    console.log(slider.value)
     isDragging = false;
     note.style.cursor = "grab";
 
     const snapped = Math.round(parseFloat(slider.value));
 
-    if (slider.value != snapped) {
-        slider.value = snapped;
+    slider.value = snapped;
 
-        console.log(snapped)
+    // Snap the note to the slider value
+    const rect = container.getBoundingClientRect();
+    const percent = (snapped - slider.min) / (slider.max - slider.min);
 
-        // Snap the note to the slider value
-        const rect = container.getBoundingClientRect();
-        const percent = (snapped - slider.min) / (slider.max - slider.min);
-        const staff = document.querySelector(".staff-lines");
-        const staffHeight = 80;
-        // Move the note horizontally
-        const usableWidth = rect.width - clefOffset - note.offsetWidth;
-        const x = percent * usableWidth;
-        // Raise the note as it moves right
-        const y = percent * (staffHeight - note.offsetHeight) + note.offsetHeight;
-        note.style.transform = `translate(${x}px, -${y}px)`;
-        note.style.transition = "transform 0.2s ease-out";
-        note.style.cursor = "grab";
+    const {x, y} = calculateNotePosition(container, percent);
+    note.style.transform = `translate(${x}px, -${y}px)`;
+    note.style.transition = "transform 0.2s ease-out";
+    note.style.cursor = "grab";
+
+    // If the new snapped value is the same as the last one don' change the hypothesis position
+    if (snapped != lastSnappedValue) {
 
         hypothesisEl.style.opacity = 0;
 
@@ -61,7 +53,10 @@ window.addEventListener("mouseup", () => {
         if (hypothesisHeaderEl.textContent != "Your hypothesis:") {
 
             hypothesisHeaderEl.textContent = "Your hypothesis:"; // Change the header
-            hypothesisFollowupEl.style.opacity = 1; // Show the follow-up text ("Scroll down to see more")
+
+            setTimeout(() => {
+                hypothesisFollowupEl.style.opacity = 1; // Show the follow-up text ("Scroll down to see more")
+            }, 1400); // Wait for the hypothesis fade-in to be done, so the two fade in animations happen sequentially
 
             hypothesisEl.textContent = messages[snapped];
             hypothesisEl.style.opacity = 1;
@@ -69,6 +64,9 @@ window.addEventListener("mouseup", () => {
             updateHypothesis(snapped)
         }
     }
+    playNoteSound(snapped);
+    lastSnappedValue = snapped;
+
 });
 
 window.addEventListener("mousemove", (e) => {
@@ -78,21 +76,16 @@ window.addEventListener("mousemove", (e) => {
     const percent = Math.min(Math.max((e.clientX - rect.left) / rect.width, 0), 1);
     slider.value = percent * (slider.max - slider.min) + Number(slider.min); // rounds automatically
 
-    const staff = document.querySelector(".staff-lines");
-    const staffHeight = 80;
-
-    const usableWidth = rect.width - clefOffset - note.offsetWidth;
-    const x = percent * usableWidth;
-
-    const y = percent * (staffHeight - note.offsetHeight) + note.offsetHeight;
-
+    const {x, y} = calculateNotePosition(container, percent);
     note.style.transform = `translate(${x}px, -${y}px)`;
 });
 
 window.addEventListener("DOMContentLoaded", () => {
-    const note = document.getElementById("note-icon");
-    const staff = document.querySelector(".staff-lines");
-    const container = document.getElementById("staff-slider-container");
+
+    setTimeout(() => {
+        document.getElementById("hypothesis-content").style.opacity = 1;
+    }, 5000);
+
 
     if (!note || !staff || !container) {
         console.error("Element not found");
@@ -107,9 +100,6 @@ window.addEventListener("DOMContentLoaded", () => {
     note.style.top = `${top}px`;
     note.style.transform = `translateY(-100%)`;
 });
-
-let isFading = false;
-let nextSnappedValue = null;
 
 function updateHypothesis(snapped) {
     // If already fading, store the next desired value and return
@@ -140,4 +130,20 @@ function updateHypothesis(snapped) {
     }, 2000);
 }
 
+function calculateNotePosition(container, percent) {
+    const usableWidth = container.getBoundingClientRect().width - clefOffset - note.offsetWidth;
+    const x = percent * usableWidth;
+    const y = percent * (staffHeight - note.offsetHeight) + note.offsetHeight;
+    return { x, y };
+}
+
+function playNoteSound(index) {
+    console.log("Playing sound for note:", index);
+    const audio = document.getElementById(`note-sound-${index}`);
+    if (audio) {
+        audio.volume = 0.6;
+        audio.currentTime = 0; // rewind to start in case it's still playing
+        audio.play().catch(e => console.log("Note sound blocked:", e));
+    }
+}
 

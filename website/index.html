@@ -93,24 +93,25 @@
 						</div>
 					</div>
 
-			<!-- legend -->
-			<div class="row legend-row">
-			<div class="col-12 text-center">
-				<span class="legend-swatch" style="background:#3A5F3E;"></span>Country
-				<span class="legend-swatch" style="background:#DC8C78;"></span>K-pop
-				<span class="legend-swatch" style="background:#B6572C;"></span>Pop
-				<span class="legend-swatch" style="background:#AFC07A;"></span>R&amp;B
-				<span class="legend-swatch" style="background:#A67A3F;"></span>Video-game music
+					<!-- legend -->
+					<div class="row legend-row">
+						<div class="col-12 text-center">
+							<span class="legend-swatch" style="background:#3A5F3E;"></span>Country
+							<span class="legend-swatch" style="background:#DC8C78;"></span>K-pop
+							<span class="legend-swatch" style="background:#B6572C;"></span>Pop
+							<span class="legend-swatch" style="background:#AFC07A;"></span>R&amp;B
+							<span class="legend-swatch" style="background:#A67A3F;"></span>Video-game music
+						</div>
+					</div>
+				</div>
+				<!-- explanation box that is hidden by default -->
+				<div id="personas-explanation-box" class="personas-explanation-box">
+					<p>
+						You might wish you had more context, guessing someone's mental health by their music alone is
+						tough. But maybe you got lucky: after all, it's still a 1-in-3 shot either way.
+				</div>
+				<a href="#two" class="goto-next scrolly">Next</a>
 			</div>
-			</div>
-			</div>
-			<!-- explanation box that is hidden by default -->
-			<div id="personas-explanation-box" class="personas-explanation-box">
-			<p>
-				You might wish you had more context, guessing someone's mental health by their music alone is tough. But maybe you got lucky: after all, it's still a 1-in-3 shot either way.
-			</div>
-			<a href="#two" class="goto-next scrolly">Next</a>
-		</div>
 		</section>
 
 		<section id="two" class="spotlight style1 bottom" style="scroll-margin-top: 100px;">
@@ -205,6 +206,11 @@
 								<div></div>
 								<div></div>
 							</div>
+
+							<audio id="note-sound-0" src="assets/sounds/Single Note F.mp3" preload="auto"></audio>
+							<audio id="note-sound-1" src="assets/sounds/Single Note A.mp3" preload="auto"></audio>
+							<audio id="note-sound-2" src="assets/sounds/Single Note C.mp3" preload="auto"></audio>
+							<audio id="note-sound-3" src="assets/sounds/Single Note E.mp3" preload="auto"></audio>
 
 							<img src="images/GClef.svg" id="treble-clef" alt="Treble Clef" />
 
@@ -318,30 +324,31 @@
 		<!-- Five -->
 		<section id="five" class="spotlight style3 left">
 			<style>
-			#correlation1 {
-			width: 100%;
-			min-height: 300px;
-			background-color: #000033;
-			border: 3px dashed red;
-			position: relative;
-			z-index: 1;
-			margin-bottom: 2rem; /* Push the legend down */
-			}
+				#correlation1 {
+					width: 100%;
+					min-height: 300px;
+					background-color: #000033;
+					border: 3px dashed red;
+					position: relative;
+					z-index: 1;
+					margin-bottom: 2rem;
+					/* Push the legend down */
+				}
 
 
 
-			 #four {
-				 position: relative;
-				 z-index: 1;
-				 background-color:#1c1d26;
-				 text-align: center;
-    			 padding: 1em 0;
-			 }
+				#four {
+					position: relative;
+					z-index: 1;
+					background-color: #1c1d26;
+					text-align: center;
+					padding: 1em 0;
+				}
 
-					.spotlight.style3.left::before {
-						display: none !important;
-						/* removes background image layer if present */
-					}
+				.spotlight.style3.left::before {
+					display: none !important;
+					/* removes background image layer if present */
+				}
 			</style>
 			<div id="correlation1"></div>
 			<a href="#six" class="goto-next scrolly">Next</a>
