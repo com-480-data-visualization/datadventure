@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function () {
       .append('svg')
       .attr('width', width)
       .attr('height', height)
-      .style('background-color', '#333');
+      .style('background-color', '#00001a');
   
     const simulation = d3.forceSimulation(data)
       .force('charge', d3.forceManyBody().strength(5))
