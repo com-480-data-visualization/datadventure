@@ -4386,3 +4386,92 @@ body.is-touch #banner {
 	transform: scale(1.6);
 
 }
+
+
+/* PERSONAS QUIZ */
+	/* make the H2 white and give it room */
+	#one header h2 {
+	color: white;
+	margin-bottom: 1rem;
+	text-align: center;
+	}
+
+	/* flex-row container for the 3 personas */
+	#persona-viz {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	gap: 1rem;
+	margin: 1.5rem 0;
+	overflow: visible; 
+	width: 100%;
+	}
+
+	/* each persona card */
+	.persona-card {
+	flex: 0 0 calc(33% - 1rem);
+	border: 1px solid white;
+	padding: 0.75rem;
+	box-sizing: border-box;
+	background: rgba(255,255,255,0.05);
+	position: relative;
+	transition: transform 0.2s ease, outline 0.2s ease;
+	}
+
+	/* label transitions */
+	.persona-label {
+	transition: font-size 0.2s ease, color 0.2s ease;
+	}
+
+	/* ensure the svg inside can show full bubbles */
+	.persona-card svg {
+	overflow: visible;
+	width: 100%;
+	height: auto;
+	}
+
+	/* hover state: white outline, scale up */
+	.persona-card.hovered {
+	transform: scale(1.05);
+	outline: 2px solid white;
+	outline-offset: -2px;
+	z-index: 10;
+	}
+	.persona-card.hovered .persona-label {
+	font-size: 1.2em;
+	}
+
+	/* wrong selection: red outline, scale up */
+	.persona-card.selected-wrong {
+	transform: scale(1.05);
+	outline: 2px solid red;
+	outline-offset: -2px;
+	z-index: 10;
+	}
+	.persona-card.selected-wrong .persona-label {
+	font-size: 1.2em;
+	color: red;
+	}
+
+	/* correct selection: green outline, scale up */
+	.persona-card.selected-correct {
+	transform: scale(1.05);
+	outline: 2px solid limegreen;
+	outline-offset: -2px;
+	z-index: 10;
+	}
+	.persona-card.selected-correct .persona-label {
+	font-size: 1.2em;
+	color: limegreen;
+	}
+
+	/* legend spacing */
+	.legend-row {
+	margin: 1rem 0 2rem;
+	}
+	.legend-swatch {
+	display: inline-block;
+	width: 12px;
+	height: 12px;
+	margin-right: 6px;
+	}
