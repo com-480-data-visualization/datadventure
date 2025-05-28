@@ -1,15 +1,22 @@
-// assets/js/personas_viz.js
+// preload audio clips
+const correctAudio = new Audio("assets/sounds/correct.mp3");
+const wrongAudio   = new Audio("assets/sounds/wrong.mp3");
+// set volume levels
+correctAudio.volume = 0.1;
+wrongAudio.volume   = 0.1;
+
+
 document.addEventListener("DOMContentLoaded", () => {
   const data = window.listeners;
   if (!data) return console.error("window.listeners not found");
 
   const container = d3.select("#persona-viz");
   const colorMap = {
-    country:         "#F39C12",
-    kpop:            "#9B59B6",
-    pop:             "#E74C3C",
-    rnb:             "#3498DB",
-    videoGameMusic: "#2ECC71"
+    country:         "#3A5F3E",  // dark olive green
+    kpop:            "#DC8C78",  // soft peach
+    pop:             "#B6572C",  // burnt red
+    rnb:             "#AFC07A",  // pale olive
+    videoGameMusic:  "#A67A3F"   // warm mustard brown
   };
   const radiusScale = d3.scaleSqrt().domain([0,3]).range([8,60]);
   const svgW = 300, svgH = 200;
@@ -39,12 +46,25 @@ document.addEventListener("DOMContentLoaded", () => {
       .attr("class","persona-card")
       .on("mouseover",  () => card.classed("hovered",true))
       .on("mouseout",   () => card.classed("hovered",false))
-      .on("click", () => {
+      .on("click", function() {
+        // clear prior
         container.selectAll(".persona-card")
-          .classed("selected-wrong",false)
-          .classed("selected-correct",false);
-        const correct = (i===2); // Person 3 is correct, and should be green
-        card.classed(correct?"selected-correct":"selected-wrong", true);
+          .classed("selected-wrong", false)
+          .classed("selected-correct", false);
+
+        // mark this one
+        const correct = (i === 2); // Person 3 is correct
+        d3.select(this)
+          .classed(correct ? "selected-correct" : "selected-wrong", true);
+
+        // play the appropriate sound
+        if (correct) {
+          correctAudio.currentTime = 0;
+          correctAudio.play();
+        } else {
+          wrongAudio.currentTime = 0;
+          wrongAudio.play();
+        }
       });
 
     // label
@@ -64,9 +84,9 @@ document.addEventListener("DOMContentLoaded", () => {
       return {
         genre,
         val,
-        r: radiusScale(val),
-        x: positions[idx].x,
-        y: positions[idx].y
+        r:   radiusScale(val),
+        x:   positions[idx].x,
+        y:   positions[idx].y
       };
     });
 
@@ -74,13 +94,13 @@ document.addEventListener("DOMContentLoaded", () => {
     svg.selectAll("circle")
       .data(nodes)
       .join("circle")
-        .attr("cx", d => d.x)
-        .attr("cy", d => d.y)
-        .attr("r",  d => d.r)
-        .attr("fill", d => colorMap[d.genre])
-        .attr("opacity", 0.8)
-        .attr("stroke", "#333")
-        .attr("stroke-width", 1);
+        .attr("cx",           d => d.x)
+        .attr("cy",           d => d.y)
+        .attr("r",            d => d.r)
+        .attr("fill",         d => colorMap[d.genre])
+        .attr("fill-opacity", 0.6)                  
+        .attr("stroke",       d => d3.color(colorMap[d.genre]).darker(1))
+        .attr("stroke-width", 2);
   });
 });
 
