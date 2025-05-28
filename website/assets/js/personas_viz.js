@@ -5,6 +5,10 @@ const wrongAudio   = new Audio("assets/sounds/wrong.mp3");
 correctAudio.volume = 0.1;
 wrongAudio.volume   = 0.1;
 
+// get explaination text to personas
+const explanation = document.getElementById("personas-explanation-box");
+
+
 
 document.addEventListener("DOMContentLoaded", () => {
   const data = window.listeners;
@@ -65,6 +69,9 @@ document.addEventListener("DOMContentLoaded", () => {
           wrongAudio.currentTime = 0;
           wrongAudio.play();
         }
+
+        // make text visible
+        explanation.classList.add("visible");
       });
 
     // label

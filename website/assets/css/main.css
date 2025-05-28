@@ -4465,6 +4465,25 @@ body.is-touch #banner {
 	color: limegreen;
 	}
 
+	/* personas explaination box*/
+	.personas-explanation-box {
+	opacity: 0;
+	transition: opacity 0.4s ease;
+	color: #ccc;
+	font-size: 0.9rem;
+	max-width: 800px;
+	margin: 1.5rem auto;
+	text-align: center;
+	line-height: 1.4;
+	margin-bottom: 4rem;
+	}
+
+	/* making personas explaination box visible*/
+	.personas-explanation-box.visible {
+	opacity: 1;
+	}
+
+
 	/* legend spacing */
 	.legend-row {
 	margin: 1rem 0 2rem;
