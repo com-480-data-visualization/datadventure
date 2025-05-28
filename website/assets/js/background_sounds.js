@@ -1,22 +1,30 @@
-  const music = document.getElementById("bg-music");
-  const btn = document.getElementById("toggle-music");
+document.addEventListener("DOMContentLoaded", () => {
 
-  document.addEventListener("click", () => {
-    if (music.paused) {
-      music.volume = 0.4;
-      music.play().catch(e => {
-        console.log("Autoplay blocked:", e);
-      });
+    const music = document.getElementById("bg-music");
+    const toggleBtn = document.getElementById("toggle-music");
+    const icon = document.getElementById("music-icon");
+
+    function updateMusicIcon() {
+        icon.textContent = music.paused ? "🔇" : "🔊";
     }
-  }, { once: true });
 
-  btn.addEventListener("click", () => {
-    console.log("Toggle background music button clicked");
-    if (music.paused) {
-      console.log("Playing background music");
-      music.play();
-    } else {
-      music.pause();
-    }
-  });
+    document.addEventListener("mousemove", () => {
+        if (music.paused) {
+            music.volume = 0.6;
+            music.play().catch(e => console.log("Autoplay blocked:", e));
+            icon.textContent = "🔊";
+        }
+    }, { once: true });
 
+    toggleBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        if (music.paused) {
+            music.play();
+        } else {
+            music.pause();
+        }
+    });
+
+    music.addEventListener("play", updateMusicIcon);
+    music.addEventListener("pause", updateMusicIcon);
+});

@@ -2,6 +2,8 @@ const slider = document.getElementById("music-slider");
 const hypothesisHeaderEl = document.getElementById("hypothesis-header");
 const hypothesisEl = document.getElementById("hypothesis");
 const hypothesisFollowupEl = document.getElementById("hypothesis-followup");
+const clefOffset = 60;
+
 
 window.addEventListener("load", () => {
     setTimeout(() => {
@@ -44,7 +46,8 @@ window.addEventListener("mouseup", () => {
         const staff = document.querySelector(".staff-lines");
         const staffHeight = 80;
         // Move the note horizontally
-        const x = percent * (rect.width - 35);
+        const usableWidth = rect.width - clefOffset - note.offsetWidth;
+        const x = percent * usableWidth;
         // Raise the note as it moves right
         const y = percent * (staffHeight - note.offsetHeight) + note.offsetHeight;
         note.style.transform = `translate(${x}px, -${y}px)`;
@@ -78,7 +81,8 @@ window.addEventListener("mousemove", (e) => {
     const staff = document.querySelector(".staff-lines");
     const staffHeight = 80;
 
-    const x = percent * (rect.width - 35);
+    const usableWidth = rect.width - clefOffset - note.offsetWidth;
+    const x = percent * usableWidth;
 
     const y = percent * (staffHeight - note.offsetHeight) + note.offsetHeight;
 
@@ -99,7 +103,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const containerRect = container.getBoundingClientRect();
 
     const top = staffRect.bottom - containerRect.top;
-    note.style.left = `0px`;
+    note.style.left = `${clefOffset}px`;
     note.style.top = `${top}px`;
     note.style.transform = `translateY(-100%)`;
 });
@@ -132,8 +136,8 @@ function updateHypothesis(snapped) {
             if (nextSnappedValue !== null) {
                 updateHypothesis(nextSnappedValue);
             }
-        }, 2000); // match your fade-in duration
-    }, 2000); // match your fade-out duration
+        }, 2000);
+    }, 2000);
 }
 
 
