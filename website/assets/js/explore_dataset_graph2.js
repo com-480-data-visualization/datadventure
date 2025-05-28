@@ -72,8 +72,6 @@ Promise.all([
 
     updatePredictionChart();
 
-    console.log('Test');
-
     function predict(features, model) {
         let z = model.intercept;
         for (let i = 0; i < model.coef.length; i++) {
@@ -120,7 +118,7 @@ Promise.all([
     // Legend
     const legendData_2 = [
         { label: "likelihood of anxiety", color: "#be5504" },
-        { label: "likelohood of depression", color: "#123456" }
+        { label: "likelihood of depression", color: "#123456" }
     ];
 
     const legend_2 = d3.select("#legend-overlay_2");
@@ -137,7 +135,5 @@ Promise.all([
       <div style="width: 12px; height: 12px; background:${d.color}; border: 1px solid black; margin-right: 6px;"></div>
       <span>${d.label}</span>
     `);
-
-    console.log("Legend added:", legend_2.selectAll(".legend-item").size());
 
 }).catch(error => console.error("Failed to load models", error));

@@ -103,34 +103,112 @@
 		</div>
 		</section>
 
-
-
-
 		<section id="two" class="spotlight style1 bottom">
+			<style>
+				#staff-slider-container {
+					position: relative;
+					width: 80%;
+					max-width: 600px;
+					margin: 40px auto 0;
+				}
+
+				.staff-lines {
+					position: absolute;
+					top: 0;
+					left: 0;
+					right: 0;
+					height: 80px;
+					display: flex;
+					flex-direction: column;
+					justify-content: space-between;
+					z-index: 0;
+				}
+
+				.staff-lines div {
+					height: 2px;
+					background-color: grey;
+					width: 100%;
+					display: block;
+				}
+
+				#music-slider {
+					position: relative;
+					z-index: 1;
+					width: 100%;
+					margin: 60px 0 20px 0;
+					-webkit-appearance: none;
+					background: none;
+				}
+
+				#music-slider::-webkit-slider-thumb {
+					-webkit-appearance: none;
+					width: 0;
+					height: 0;
+				}
+
+				#music-slider::-moz-range-thumb {
+					width: 0;
+					height: 0;
+					border: none;
+				}
+
+				/* 🎵 Moving note icon */
+				#note-icon {
+					position: absolute;
+					left: 0;
+					top: 80px;
+					width: 35px;
+					cursor: pointer;
+					transition: transform 0.1s linear;
+					pointer-events: auto;
+					z-index: 2;
+				}
+			</style>
+
 			<div class="content">
-				<div class="container">
+				<div class="container" style="padding-bottom: 50px;">
+
 					<div class="row">
 						<div class="col-12">
 							<header>
-								<h2>How much do you think music impacts the mental health of listeners?</h2>
+								<h2>Take a second and reflect: How much do you think music impacts the mental health of
+									listeners?</h2>
 							</header>
 						</div>
 					</div>
-					<div class="row">
-						<div class="col-12">
-							<a href="#" class="image-link">
-								<img src="images/music.jpg" alt="Music Impact" class="stacked-image" />
-							</a>
+
+					<div id="hypothesis-content" style="opacity: 0; transition: opacity 2s ease;">
+						<div id="staff-slider-container">
+							<div class="staff-lines">
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+							</div>
+
+							<input type="range" id="music-slider" min="0" max="3" step="0.1" value="0"/>
+							<img id="note-icon" src="images/WholeNote.svg" alt="Note" draggable="false"/>
+
+
+							<div class="slider-labels" style="display: flex; justify-content: space-between; width: 100%; font-size: 1.2rem; padding-top: 10px;">
+								<span>barely</span>
+								<span>slightly</span>
+								<span>moderately</span>
+								<span>greatly</span>
+							</div>
 						</div>
-					</div>
-					<div class="row">
-						<div class="col-12">
-							<label for="hypothesis">Your hypothesis:</label>
-							<input type="text" id="hypothesis" name="hypothesis" class="text-box" />
-						</div>
+						<p id="hypothesis-header" style="padding-top: 20px; font-size: 1.2rem;">Move the slider
+							depending on your hypothesis</p>
+						<p id="hypothesis" style="font-size: 1.2rem;  opacity: 0; transition: opacity 2s ease;">nothing
+						</p>
+						<p id="hypothesis-followup" style="font-size: 1.2rem; opacity: 0; transition: opacity 2s ease;">
+							Scroll to explore your hypothesis!</p>
 					</div>
 				</div>
 			</div>
+			<!-- D3 script-->
+			<script src="assets/js/hypothesis_section.js"></script>
 			<a href="#three" class="goto-next scrolly">Next</a>
 		</section>
 
@@ -138,7 +216,7 @@
 		<section id="three" class="spotlight style1 bottom" style="min-height: 1000px;">
 
 			<div class="content">
-				<div class="container">
+				<div class="container" style="padding-bottom: 50px;">
 					<div class="row">
 						<div class="col-12">
 							<header>
@@ -174,7 +252,8 @@
 		</section>
 
 		<!-- Four -->
-		<section id="four" class="spotlight style3 top mb-10" style="width: 100%; max-width: 100%; height: auto; overflow: visible; margin-bottom: 75px;">
+		<section id="four" class="spotlight style3 top mb-10"
+			style="width: 100%; max-width: 100%; height: auto; overflow: visible; margin-bottom: 75px;">
 
 			<div class="content">
 				<div class="container">
