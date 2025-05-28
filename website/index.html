@@ -1,7 +1,16 @@
 <!DOCTYPE HTML>
 
 <html>
-<style>
+
+<head>
+	<title>Music and mental health by datadventure</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<noscript>
+		<link rel="stylesheet" href="assets/css/noscript.css" />
+	</noscript>
+	<style>
 	#vizualisation {
 		width: 100%;
 		height: 300px;
@@ -22,16 +31,10 @@
 		display: none !important;
 		/* removes background image layer if present */
 	}
-</style>
 
-<head>
-	<title>Music and mental health by datadventure</title>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-	<link rel="stylesheet" href="assets/css/main.css" />
-	<noscript>
-		<link rel="stylesheet" href="assets/css/noscript.css" />
-	</noscript>
+
+
+</style>
 </head>
 
 <body class="is-preload landing">
@@ -62,48 +65,43 @@
 			<a href="#one" class="goto-next scrolly">Next</a>
 		</section>
 
+
+
 		<!-- One -->
 		<section id="one" class="spotlight style1 bottom">
-			<div class="content">
-				<div class="container">
-					<div class="row">
-						<div class="col-12">
-							<header>
-								<h2>Try to figure out: Which of the listeners self-report as depressed?</h2>
-							</header>
-						</div>
-					</div>
-					<div class="row text-center">
-						<div class="col-3">
-							<div>person 1</div>
-							<a href="#" class="image-link">
-								<img src="images/bubble1.png" alt="Person1" class="feature-image" />
-							</a>
-						</div>
-						<div class="col-3">
-							<div>person 2</div>
-							<a href="#" class="image-link">
-								<img src="images/bubble1.png" alt="Person1" class="feature-image" />
-							</a>
-						</div>
-						<div class="col-3">
-							<div>person 3</div>
-							<a href="#" class="image-link">
-								<img src="images/bubble1.png" alt="Person1" class="feature-image" />
-							</a>
-						</div>
-						<div class="col-3">
-							<div style="color: #FF5733;">hours listening to Pop</div>
-							<div style="color: #33FF57;">hours listening to Country</div>
-							<div style="color: #3357FF;">hours listening to Rock</div>
-						</div>
-					</div>
+		<div class="content">
+			<div class="container">
+
+			<!-- headline -->
+			<div class="row">
+				<div class="col-12">
+				<header>
+					<h2>Try to figure out: Which of the listeners self-report as depressed?</h2>
+				</header>
 				</div>
-				<a href="#two" class="goto-next scrolly">Next</a>
 			</div>
+
+			<!-- personas visualization -->
+			<div class="row">
+				<div class="col-12">
+				<div id="persona-viz"></div>
+				</div>
+			</div>
+
+			<!-- legend -->
+			<div class="row legend-row">
+				<div class="col-12 text-center">
+				<span class="legend-swatch" style="background:#F39C12;"></span>Country
+				<span class="legend-swatch" style="background:#9B59B6;"></span>K-pop
+				<span class="legend-swatch" style="background:#E74C3C;"></span>Pop
+				<span class="legend-swatch" style="background:#3498DB;"></span>R&amp;B
+				<span class="legend-swatch" style="background:#2ECC71;"></span>Video-game music
+				</div>
+			</div>
+			</div>
+			<a href="#two" class="goto-next scrolly">Next</a>
+		</div>
 		</section>
-
-
 
 
 
@@ -284,6 +282,9 @@
 	<script src="assets/js/browser.min.js"></script>
 	<script src="assets/js/breakpoints.min.js"></script>
 	<script src="assets/js/util.js"></script>
+	<script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="data/personas.js"></script>
+    <script src="assets/js/personas_viz.js"></script>
 	<script src="assets/js/main.js"></script>
 
 </body>
