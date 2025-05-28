@@ -11,30 +11,27 @@
 		<link rel="stylesheet" href="assets/css/noscript.css" />
 	</noscript>
 	<style>
-	#vizualisation {
-		width: 100%;
-		height: 300px;
-		background-color: rgba(255, 255, 255, 0.05);
-		border: 3px dashed red;
-		position: relative;
-		z-index: 9999;
-		/* Bring it above everything */
-	}
+		#vizualisation {
+			width: 100%;
+			height: 300px;
+			background-color: rgba(255, 255, 255, 0.05);
+			border: 3px dashed red;
+			position: relative;
+			z-index: 9999;
+			/* Bring it above everything */
+		}
 
-	#four {
-		position: relative;
-		z-index: 1;
-		background: none !important;
-	}
+		#four {
+			position: relative;
+			z-index: 1;
+			background: none !important;
+		}
 
-	.spotlight.style3.left::before {
-		display: none !important;
-		/* removes background image layer if present */
-	}
-
-
-
-</style>
+		.spotlight.style3.left::before {
+			display: none !important;
+			/* removes background image layer if present */
+		}
+	</style>
 </head>
 
 <body class="is-preload landing">
@@ -69,38 +66,38 @@
 
 		<!-- One -->
 		<section id="one" class="spotlight style1 bottom">
-		<div class="content">
-			<div class="container">
+			<div class="content">
+				<div class="container">
 
-			<!-- headline -->
-			<div class="row">
-				<div class="col-12">
-				<header>
-					<h2>Try to figure out: Which of the listeners self-report as depressed?</h2>
-				</header>
-				</div>
-			</div>
+					<!-- headline -->
+					<div class="row">
+						<div class="col-12">
+							<header>
+								<h2>Try to figure out: Which of the listeners self-report as depressed?</h2>
+							</header>
+						</div>
+					</div>
 
-			<!-- personas visualization -->
-			<div class="row">
-				<div class="col-12">
-				<div id="persona-viz"></div>
-				</div>
-			</div>
+					<!-- personas visualization -->
+					<div class="row">
+						<div class="col-12">
+							<div id="persona-viz"></div>
+						</div>
+					</div>
 
-			<!-- legend -->
-			<div class="row legend-row">
-				<div class="col-12 text-center">
-				<span class="legend-swatch" style="background:#F39C12;"></span>Country
-				<span class="legend-swatch" style="background:#9B59B6;"></span>K-pop
-				<span class="legend-swatch" style="background:#E74C3C;"></span>Pop
-				<span class="legend-swatch" style="background:#3498DB;"></span>R&amp;B
-				<span class="legend-swatch" style="background:#2ECC71;"></span>Video-game music
+					<!-- legend -->
+					<div class="row legend-row">
+						<div class="col-12 text-center">
+							<span class="legend-swatch" style="background:#F39C12;"></span>Country
+							<span class="legend-swatch" style="background:#9B59B6;"></span>K-pop
+							<span class="legend-swatch" style="background:#E74C3C;"></span>Pop
+							<span class="legend-swatch" style="background:#3498DB;"></span>R&amp;B
+							<span class="legend-swatch" style="background:#2ECC71;"></span>Video-game music
+						</div>
+					</div>
 				</div>
+				<a href="#two" class="goto-next scrolly">Next</a>
 			</div>
-			</div>
-			<a href="#two" class="goto-next scrolly">Next</a>
-		</div>
 		</section>
 
 		<section id="two" class="spotlight style1 bottom">
@@ -187,11 +184,12 @@
 								<div></div>
 							</div>
 
-							<input type="range" id="music-slider" min="0" max="3" step="0.1" value="0"/>
-							<img id="note-icon" src="images/WholeNote.svg" alt="Note" draggable="false"/>
+							<input type="range" id="music-slider" min="0" max="3" step="0.1" value="0" />
+							<img id="note-icon" src="images/WholeNote.svg" alt="Note" draggable="false" />
 
 
-							<div class="slider-labels" style="display: flex; justify-content: space-between; width: 100%; font-size: 1.2rem; padding-top: 10px;">
+							<div class="slider-labels"
+								style="display: flex; justify-content: space-between; width: 100%; font-size: 1.2rem; padding-top: 10px;">
 								<span>barely</span>
 								<span>slightly</span>
 								<span>moderately</span>
@@ -295,24 +293,26 @@
 		<!-- Five -->
 		<section id="five" class="spotlight style3 left">
 			<style>
-			 #correlation1 {
-				 width: 100%;
-				 height: 300px;
-				 background-color: rgba(255, 255, 255, 0.05);
-				 border: 3px dashed red;
-				 position: relative;
-				 z-index: 9999; /* Bring it above everything */
-			 }
+				#correlation1 {
+					width: 100%;
+					height: 300px;
+					background-color: rgba(255, 255, 255, 0.05);
+					border: 3px dashed red;
+					position: relative;
+					z-index: 9999;
+					/* Bring it above everything */
+				}
 
-			 #four {
-				 position: relative;
-				 z-index: 1;
-				 background: none !important;
-			 }
+				#four {
+					position: relative;
+					z-index: 1;
+					background: none !important;
+				}
 
-			 .spotlight.style3.left::before {
-				 display: none !important; /* removes background image layer if present */
-			 }
+				.spotlight.style3.left::before {
+					display: none !important;
+					/* removes background image layer if present */
+				}
 			</style>
 			<div id="correlation1"></div>
 			<a href="#six" class="goto-next scrolly">Next</a>
@@ -320,15 +320,15 @@
 			<div id="correlation1"></div>
 
 			<div id="legend-banner">
-<h2>Factors Correlating with Depression</h2>
-<p>
-	<span class="legend red">positive correlation</span>
-	<span class="legend blue">negative correlation</span>
-	<span class="legend white">radius = Correlation factor</span>
-</p>
-</div>
+				<h2>Factors Correlating with Depression</h2>
+				<p>
+					<span class="legend red">positive correlation</span>
+					<span class="legend blue">negative correlation</span>
+					<span class="legend white">radius = Correlation factor</span>
+				</p>
+			</div>
 
-	</section>
+		</section>
 
 
 		<section id="six" class="spotlight style3 right">
@@ -384,8 +384,8 @@
 	<script src="assets/js/breakpoints.min.js"></script>
 	<script src="assets/js/util.js"></script>
 	<script src="https://d3js.org/d3.v7.min.js"></script>
-    <script src="data/personas.js"></script>
-    <script src="assets/js/personas_viz.js"></script>
+	<script src="data/personas.js"></script>
+	<script src="assets/js/personas_viz.js"></script>
 	<script src="assets/js/main.js"></script>
 
 </body>
