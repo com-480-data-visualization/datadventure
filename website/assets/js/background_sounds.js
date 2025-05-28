@@ -1,22 +1,24 @@
+document.addEventListener("DOMContentLoaded", () => {
   const music = document.getElementById("bg-music");
-  const btn = document.getElementById("toggle-music");
+  const toggleBtn = document.getElementById("toggle-music");
+  const icon = document.getElementById("music-icon");
 
-  document.addEventListener("click", () => {
+  document.addEventListener("mousemove", () => {
     if (music.paused) {
-      music.volume = 0.4;
-      music.play().catch(e => {
-        console.log("Autoplay blocked:", e);
-      });
+      music.volume = 0.6;
+      music.play().catch(e => console.log("Autoplay blocked:", e));
+      icon.textContent = "🔊";
     }
   }, { once: true });
 
-  btn.addEventListener("click", () => {
-    console.log("Toggle background music button clicked");
+  toggleBtn.addEventListener("click", (e) => {
+    e.preventDefault();
     if (music.paused) {
-      console.log("Playing background music");
       music.play();
+      icon.textContent = "🔊";
     } else {
       music.pause();
+      icon.textContent = "🔇";
     }
   });
-
+});

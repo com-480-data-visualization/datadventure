@@ -35,8 +35,12 @@
 </head>
 
 <body class="is-preload landing">
-	<audio id="bg-music" src="assets/sounds/background_sound.ogg" loop></audio>
 
+	<!-- Background sounds -->
+	<script src="assets/js/background_sounds.js"></script>
+	<audio id="bg-music" src="assets/sounds/background_sound.mp3" loop>
+		Your browser does not support the audio element.
+	</audio>
 
 	<div id="page-wrapper">
 
@@ -45,9 +49,9 @@
 			<h1 id="logo"><a href="index.html">datadventure</a></h1>
 			<nav id="nav">
 				<ul>
+					<li><a href="#" id="toggle-music"><span id="music-icon">🔊</span></a></li>
 					<li><a href="index.html">Home</a></li>
 					<li><a href="authors.html">The Authors</a></li>
-					<button id="toggle-music">Toggle Music</button>
 				</ul>
 			</nav>
 		</header>
@@ -298,31 +302,32 @@
 		<!-- Five -->
 		<section id="five" class="spotlight style3 left">
 			<style>
-			 #correlation1 {
-			#correlation1 {
-			width: 100%;
-			min-height: 300px;
-			background-color: rgba(255, 255, 255, 0.05);
-			border: 3px dashed red;
-			position: relative;
-			z-index: 1;
-			margin-bottom: 2rem; /* Push the legend down */
-			}
+				#correlation1 {
+					#correlation1 {
+						width: 100%;
+						min-height: 300px;
+						background-color: rgba(255, 255, 255, 0.05);
+						border: 3px dashed red;
+						position: relative;
+						z-index: 1;
+						margin-bottom: 2rem;
+						/* Push the legend down */
+					}
 
 
 
-			 #four {
-				 position: relative;
-				 z-index: 1;
-				 background: none !important;
-				 text-align: center;
-    			 padding: 1em 0;
-			 }
+					#four {
+						position: relative;
+						z-index: 1;
+						background: none !important;
+						text-align: center;
+						padding: 1em 0;
+					}
 
-				.spotlight.style3.left::before {
-					display: none !important;
-					/* removes background image layer if present */
-				}
+					.spotlight.style3.left::before {
+						display: none !important;
+						/* removes background image layer if present */
+					}
 			</style>
 			<div id="correlation1"></div>
 			<a href="#six" class="goto-next scrolly">Next</a>
@@ -378,7 +383,7 @@
 		</section>
 
 
-   
+
 
 
 
