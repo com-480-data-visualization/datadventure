@@ -4477,7 +4477,7 @@ body.is-touch #banner {
 	}
 
 	#legend-banner {
-	  background-color: #333;
+	  background-color: #1c1d26;
 	  padding: 20px;
 	  text-align: center;
 	  color: white;
@@ -4497,16 +4497,15 @@ body.is-touch #banner {
 	}
 
 	.legend.red {
-	  color: #800020; /* bordeaux */
-	}
-
-	.legend.blue {
-	  color: #001f3f; /* navy */
-	}
-
-	.legend.white {
-	  color: white;
-	}
+		color: #FF4136;
+	  }
+	  .legend.green {
+		color: #2ECC40;
+	  }
+	  .legend.white {
+		color: white;
+	  }
+	  
 
 	  #correlation1 {
 	    width: 100%;

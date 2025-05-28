@@ -1,67 +1,80 @@
 document.addEventListener('DOMContentLoaded', function () {
-  const data = [
-    { id: 1, color: '#001f3f', radius: 70, text: 'Self-Esteem' },
-    { id: 2, color: '#800020', radius: 44, text: 'Blood Pressure' },
-    { id: 3, color: '#800020', radius: 66, text: 'headache' },
-    { id: 4, color: '#001f3f', radius: 69, text: 'sleep quality' },
-    { id: 5, color: '#001f3f', radius: 62, text: 'social support' },
-    { id: 6, color: '#800020', radius: 67, text: 'bullying' },
-    { id: 7, color: '#800020', radius: 73, text: 'stress level' },
-    { id: 8, color: '#001f3f', radius: 69, text: 'safety' },
-    { id: 9, color: '#800020', radius: 71, text: 'future career concerns' },
-    { id: 10, color: '#800020', radius: 53, text: 'noise level' },
-    { id: 11, color: '#800020', radius: 64, text: 'peer pressure' },
-    { id: 12, color: '#001f3f', radius: 63, text: 'work performance' },
-    { id: 13, color: '#800020', radius: 64, text: 'work load' },
-];
-
-
-    console.log("vizualisation.js is running");
-
-    const svgWidth = window.innerWidth;
-    const bubblePerRow = 7;
-    const rowSpacing = 180;
-    const colSpacing = 180;
-    const svgHeight = Math.ceil(data.length / bubblePerRow) * rowSpacing + 100;
-
-    data.forEach((d, i) => {
-        const row = Math.floor(i / bubblePerRow);
-        const col = i % bubblePerRow;
-
-        d.cx = (col + 1) * colSpacing;
-        d.cy = (row + 1) * rowSpacing;
-    });
-
+    const data = [
+        { id: 1, color: '#2ECC40', radius: 70, text: 'Self-Esteem' },
+        { id: 2, color: '#FF4136', radius: 44, text: 'Blood Pressure' },
+        { id: 3, color: '#FF4136', radius: 66, text: 'Headache' },
+        { id: 4, color: '#2ECC40', radius: 69, text: 'Sleep Quality' },
+        { id: 5, color: '#2ECC40', radius: 62, text: 'Social Support' },
+        { id: 6, color: '#FF4136', radius: 67, text: 'Bullying' },
+        { id: 7, color: '#FF4136', radius: 73, text: 'Stress Level' },
+        { id: 8, color: '#2ECC40', radius: 69, text: 'Safety' },
+        { id: 9, color: '#FF4136', radius: 71, text: 'Career Concerns' },
+        { id: 10, color: '#FF4136', radius: 53, text: 'Noise Level' },
+        { id: 11, color: '#FF4136', radius: 64, text: 'Peer Pressure' },
+        { id: 12, color: '#2ECC40', radius: 63, text: 'Work Performance' },
+        { id: 13, color: '#FF4136', radius: 64, text: 'Work Load' },
+      ];
+      
+    const width = window.innerWidth;
+    const height = 600;
+  
     const svg = d3.select('#correlation1')
-        .append('svg')
-        .attr('width', svgWidth)
-        .attr('height', svgHeight)
-        .style('background-color', '#333');
-
-    svg.selectAll('circle')
-        .data(data)
-        .enter()
-        .append('circle')
-        .attr('cx', d => d.cx)
-        .attr('cy', d => d.cy)
+      .append('svg')
+      .attr('width', width)
+      .attr('height', height)
+      .style('background-color', '#15161e');
+  
+    const simulation = d3.forceSimulation(data)
+      .force('charge', d3.forceManyBody().strength(5))
+      .force('center', d3.forceCenter(width / 2, height / 2))
+      .force('collision', d3.forceCollide().radius(d => d.radius + 4))
+      .on('tick', ticked);
+  
+    const node = svg.selectAll('g')
+      .data(data)
+      .enter()
+      .append('g')
+      .call(d3.drag()
+        .on('start', dragStarted)
+        .on('drag', dragged)
+        .on('end', dragEnded));
+  
+        node.append('circle')
         .attr('r', d => d.radius)
         .attr('fill', d => d.color)
+        .attr('fill-opacity', 0.6)
+        .attr('stroke', d => d.color)
+        .attr('stroke-width', 4)
         .on('click', function (event, d) {
-            alert(`Clicked: ${d.text}`);
-        });
-
-    svg.selectAll('a.link')
-        .data(data)
-        .enter()
-        .append('a')
-        .attr('xlink:href', 'elements.html')
-        .attr('target', '_self')
-        .append('text')
-        .attr('x', d => d.cx)
-        .attr('y', d => d.cy)
-        .attr('text-anchor', 'middle')
-        .attr('dy', '.3em')
-        .text(d => d.text)
-        .attr('fill', 'white')
-        .style('cursor', 'pointer');
-});
+        alert(`Clicked: ${d.text}`);
+      });
+  
+    node.append('text')
+      .text(d => d.text)
+      .attr('text-anchor', 'middle')
+      .attr('dy', '.3em')
+      .attr('fill', 'white')
+      .style('pointer-events', 'none');
+  
+    function ticked() {
+      node.attr('transform', d => `translate(${d.x},${d.y})`);
+    }
+  
+    function dragStarted(event, d) {
+      if (!event.active) simulation.alphaTarget(0.3).restart();
+      d.fx = d.x;
+      d.fy = d.y;
+    }
+  
+    function dragged(event, d) {
+      d.fx = event.x;
+      d.fy = event.y;
+    }
+  
+    function dragEnded(event, d) {
+      if (!event.active) simulation.alphaTarget(0);
+      d.fx = null;
+      d.fy = null;
+    }
+  });
+  
