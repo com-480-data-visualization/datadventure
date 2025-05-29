@@ -142,24 +142,44 @@ function playNoteSound(index) {
     console.log("Playing sound for note:", index);
     const audio = document.getElementById(`note-sound-${index}`);
     if (audio) {
-        audio.volume = 0.6;
+        audio.volume = 0.4;
         audio.currentTime = 0; // rewind to start in case it's still playing
         audio.play().catch(e => console.log("Note sound blocked:", e));
     }
 }
 
 
-window.addEventListener("load", () => {
+window.addEventListener("DOMContentLoaded", () => {
     const ball = document.getElementById("countdown-ball");
     const contentEl = document.getElementById("hypothesis-content");
+    const targetSection = document.getElementById("staff-slider-container"); // or any parent section to observe
 
+    let countdownStarted = false;
+
+    // Make sure the countdown only starts once when the section is visible
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && !countdownStarted) {
+                countdownStarted = true;
+                startCountdown(ball, contentEl);
+                observer.unobserve(entry.target); // Stop observing after it starts
+            }
+        });
+    }, {
+        threshold: 0.8 // Trigger when 80% of the section is visible
+    });
+
+    observer.observe(targetSection);
+});
+
+function startCountdown(ball, contentEl) {
     let count = 10;
     let scale = 1;
 
     // Fade in
     setTimeout(() => {
         ball.style.opacity = 1;
-    }, 100); // Slight delay ensures transition triggers
+    }, 100);
 
     const interval = setInterval(() => {
         count--;
@@ -175,10 +195,11 @@ window.addEventListener("load", () => {
             ball.style.opacity = 0;
 
             setTimeout(() => {
-                ball.remove(); // Remove after fade-out completes
-                contentEl.style.opacity = 1; // Show content
-            }, 1000); // Match CSS fade-out time
+                ball.remove();
+                contentEl.style.opacity = 1;
+            }, 1000);
         }
     }, 1000);
-});
+}
+
 
