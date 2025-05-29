@@ -4601,3 +4601,31 @@ body.no-scroll {
 	transition: transform 1s ease, box-shadow 0.8s ease, opacity 1s ease;
 	z-index: 9999;
 }
+
+/* add extra top‐margin before anxiety/depression so it only appears after scrolling */
+.corr-toggle {
+  text-align: center;
+  margin: 4rem 0 1rem;
+}
+
+
+#persona-viz {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* three‐across on wide screens */
+.persona-card {
+  flex: 0 0 32%;
+  max-width: 32%;
+  /* your existing background, padding, border, etc. */
+}
+
+/* stack on narrow screens */
+@media (max-width: 600px) {
+  .persona-card {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
