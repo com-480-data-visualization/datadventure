@@ -374,49 +374,91 @@
 
 		
 		<!-- Five -->
+	<!-- Five -->
 <section id="five" class="spotlight style3 left">
 	<style>
 	  #five {
 		background-color: #1c1d26;
 		color: #ffffff;
 		padding: 4rem 2rem;
-		text-align: center;
 	  }
   
-	  #five h2 {
+	  #five .content-wrapper {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: space-between;
+		max-width: 1200px;
+		margin: 0 auto;
+	  }
+  
+	  #five .text {
+		flex: 1 1 55%;
+		padding-right: 2rem;
+	  }
+  
+	  #five .text h2 {
 		margin-bottom: 1rem;
 	  }
   
-	  #five p {
+	  #five .text p {
 		font-size: 1.1em;
-		max-width: 800px;
-		margin: 0 auto;
 		line-height: 1.6em;
+		margin-bottom: 1rem;
+	  }
+  
+	  #five .image {
+		flex: 1 1 40%;
+		text-align: right;
+	  }
+  
+	  #five .image img {
+		max-width: 100%;
+		border-radius: 10px;
+	  }
+  
+	  @media (max-width: 768px) {
+		#five .content-wrapper {
+		  flex-direction: column;
+		}
+  
+		#five .text {
+		  padding-right: 0;
+		  margin-bottom: 2rem;
+		}
+  
+		#five .image {
+		  text-align: center;
+		}
 	  }
 	</style>
   
-	<div class="content">
-	  <h2>From Music to Lifestyle</h2>
-	  <p>
-		After analyzing the data, we started thinking that maybe it's not music directly affecting mental health,
-		but rather that certain music genres tend to align with certain lifestyle choices.
-	  </p>
-	  <p>
-		For instance, someone who listens to gospel might be more likely to be religious, while someone into lofi
-		could be spending long hours doing computer-based work or studying.
-	  </p>
-	  <p>
-		So instead of focusing only on the music, we asked: 
-		<strong>what lifestyle factors are actually correlated with depression and anxiety?</strong>
-	  </p>
-	  <p>
-		Let’s dive into that next.
-	  </p>
+	<div class="content-wrapper">
+	  <div class="text">
+		<h2>From Music to Lifestyle</h2>
+		<p>
+		  After analyzing the data, we started thinking that maybe it's not music directly affecting mental health,
+		  but rather that <strong>certain music genres tend to align with certain lifestyle choices</strong>.
+		</p>
+		<p>
+		  For instance, someone who listens to gospel might be more likely to be religious, while someone into lofi
+		  could be spending long hours doing computer-based work or studying.
+		</p>
+		<p>
+		  So instead of focusing only on the music, we asked: 
+		  <strong>what lifestyle factors are actually correlated with depression and anxiety?</strong>
+		</p>
+		<p>Let’s dive into that next.</p>
+	  </div>
+	  <div class="image">
+		<img src="images/cozy.jpeg" alt="Cozy scene representing relaxation">
+		<p class="caption">Artwork by Chris Dunillos</p>
+	  </div>
+	  <a href="#six" class="goto-next scrolly">Next</a>
 	</div>
-	<a href="#six" class="goto-next scrolly">Next</a>
+	
   </section>
   
-		
 		
 		
 		
