@@ -351,95 +351,64 @@
 
 		<!-- Five -->
 		<section id="five" class="spotlight style3 left">
-			<style>
-				#correlation1 {
-					width: 100%;
-					min-height: 300px;
-					background-color: #000033;
-					
-					position: relative;
-					z-index: 1;
-					margin-bottom: 2rem;
-					/* Push the legend down */
-				}
-
-
-
-				#four {
-					position: relative;
-					z-index: 1;
-					background-color: #1c1d26;
-					text-align: center;
-					padding: 1em 0;
-				}
-
-				.spotlight.style3.left::before {
-					display: none !important;
-					/* removes background image layer if present */
-				}
-			</style>
-			<div id="correlation1"></div>
-			<a href="#six" class="goto-next scrolly">Next</a>
-			<div id="legend-banner">
-				<h2>Factors Correlating with Depression</h2>
-				<p>
-					<span class="legend red">positive correlation</span>
-					<span class="legend green">negative correlation</span>
-					<span class="legend white">radius = Correlation factor</span>
-				</p>
-			</div>
-
-		</section>
-
-
-		<section id="six" class="spotlight style3 left">
-			<style>
-			#correlation2 {
+		<style>
+			/* one container for both */
+			#correlation-container {
+			position: relative;
 			width: 100%;
 			min-height: 300px;
 			background-color: #000033;
-			border: 3px dashed #1c1d26;
-			position: relative;
-			z-index: 1;
-			margin-bottom: 2rem; /* Push the legend down */
+			margin-bottom: 2rem;
 			}
+			/* charts stack on top of each other */
+			#correlation1,
+			#correlation2 {
+			position: absolute;
+			top: 0; left: 0;
+			width: 100%; height: 100%;
+			}
+			/* only show #correlation1 at first */
+			#correlation2 { display: none; }
 
+			/* toggle button styles */
+			.corr-toggle { text-align: center; margin-bottom: 1rem; }
+			.corr-toggle button {
+			background: transparent;
+			border: 1px solid #ccc;
+			color: #fff;
+			padding: 0.5em 1em;
+			margin: 0 0.5em;
+			cursor: pointer;
+			}
+			.corr-toggle button.active {
+			background: #fff; color: #000; border-color: #fff;
+			}
+		</style>
 
+		<!-- the two toggle buttons -->
+		<div class="corr-toggle">
+			<button id="btn-depression" class="active">Depression</button>
+			<button id="btn-anxiety">Anxiety</button>
+		</div>
 
-			 #four {
-				 position: relative;
-				 z-index: 1;
-				 background-color:#1c1d26;
-				 text-align: center;
-    			 padding: 1em 0;
-			 }
-
-					.spotlight.style3.left::before {
-						display: none !important;
-						/* removes background image layer if present */
-					}
-			</style>
+		<!-- both charts live here, but only one shows at a time -->
+		<div id="correlation-container">
+			<div id="correlation1"></div>
 			<div id="correlation2"></div>
-			<a href="#seven" class="goto-next scrolly">Next</a>
-			<div id="legend-banner">
-				<h2>Factors Correlating with anxiety</h2>
-				<p>
-					<span class="legend red">positive correlation</span>
-					<span class="legend green">negative correlation</span>
-					<span class="legend white">radius = Correlation factor</span>
-				</p>
-			</div>
+		</div>
 
+		<!-- shared legend -->
+		<div id="legend-banner">
+			<h2>Factors Correlating with <span id="legend-title">Depression</span></h2>
+			<p>
+			<span class="legend red">positive correlation</span>
+			<span class="legend green">negative correlation</span>
+			<span class="legend white">radius = Correlation factor</span>
+			</p>
+		</div>
+
+		<a href="#seven" class="goto-next scrolly">Next</a>
 		</section>
-
-
-
-
-	
-
-
-
-
 
 	</div>
 
@@ -457,8 +426,7 @@
 	<script src="assets/js/main.js"></script>
 	<script src="assets/js/correlation1.js"></script>
 	<script src="assets/js/correlation2.js"></script>
-
-
+	<script src="assets/js/correlation-toggle.js"></script>
 </body>
 
 </html>
