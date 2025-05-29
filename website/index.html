@@ -60,18 +60,21 @@
 		<section id="banner">
 
 			<div id="start-overlay">
-				<h2>Click here to start</h2>
+				<h2 class="grow-hover" id="start_button" style="cursor: pointer; width: 100%;">Click here to start.</h2>
+				<p>This data story is best enjoyed with sound on.</p>
 			</div>
 
 			<script>
 				document.addEventListener("DOMContentLoaded", () => {
 					const overlay = document.getElementById("start-overlay");
+					const startButton = document.getElementById("start_button");
 					const bannerContent = document.getElementById("banner-content");
 					const scrolly = document.getElementById("banner-scrolly");
 
 					document.body.classList.add("no-scroll");
 
-					overlay.addEventListener("click", () => {
+					startButton.addEventListener("click", () => {
+						startButton.style.transform = "scale(1.2)"; // Ensure the button does not scale back down while fading out
 						overlay.classList.add("fade-out");
 						setTimeout(() => {
 							overlay.style.display = "none";
@@ -211,7 +214,7 @@
 			</style>
 
 			<div class="content">
-				<div class="container">
+				<div class="container" style="padding-bottom: 100px;">
 
 					<div class="row">
 						<div class="col-12">
@@ -258,7 +261,7 @@
 						<p id="hypothesis" style="font-size: 1.2rem;  opacity: 0; transition: opacity 2s ease;">nothing
 						</p>
 						<p id="hypothesis-followup" style="font-size: 1.2rem; opacity: 0; transition: opacity 2s ease;">
-							Scroll to explore your hypothesis!</p>
+							Move on to explore your hypothesis!</p>
 					</div>
 				</div>
 			</div>
@@ -268,15 +271,14 @@
 		</section>
 
 		<!-- Three -->
-		<section id="three" class="spotlight style1 bottom mb-10" style="min-height: 1000px; 
-		width: 100%; max-width: 100%; overflow: visible; margin-top: 50px;">
+		<section id="three" class="spotlight style1 bottom mb-10" style="min-height: 850px; overflow: visible; ">
 
 			<div class="content">
 				<div class="container" style="padding-bottom: 50px;">
 					<div class="row">
 						<div class="col-12">
 							<header>
-								<h2>Find out how music habits affect Depression and anxiety</h2>
+								<h2>Let's explore how music habits affect Depression and anxiety</h2>
 								<p>Choose some genres and explore how this affects the mental health of listeners.
 								</p>
 							</header>
@@ -289,51 +291,70 @@
 						</div>
 					</div>
 
-					<div id="chart-container" style="position: relative; width: 80%; max-width: 800px; margin: 0 auto;">
-						<svg id="mental-health-chart" width="100%" height="600"></svg>
+					<div id="chart-container" style="position: relative; width: 80%; max-width: 600px; margin: 0 auto;">
+						<svg id="mental-health-chart" width="100%" height="400"></svg>
 
 						<div id="legend-overlay" style="
 						  position: absolute;
 						  top: 20px;
-						  right: -120px;
+						  right: -100px;
 						  padding: 10px;">
 						</div>
 					</div>
 				</div>
 			</div>
-			<a href="#four" class="goto-next scrolly">Next</a>
+			<a href="#four-intro" class="goto-next scrolly">Next</a>
 			<!-- D3 Script -->
 			<script src="https://d3js.org/d3.v7.min.js"></script>
-			<script src="assets/js/explore_dataset_graph.js"></script>
+			<script src="assets/js/explore_dataset_genres.js"></script>
 		</section>
 
-		<!-- Four -->
-		<section id="four" class="spotlight style3 bottom mb-10"
-			style="width: 100%; max-width: 100%; height: auto; overflow: visible; margin-bottom: 75px;">
-
-			<div class="content">
+		<!-- Four Intro-->
+		<section id="four-intro" class="spotlight style1 bottom mb-10">
+			<div class="content" style="padding-bottom: 250px;">
 				<div class="container">
 
 					<div class="row">
 						<div class="col-12">
-							<header>
+							<header style="padding-top: 100px">
 								<h2>Explore some more.</h2>
-								<p>Could you already find a pattern in the previous section? It was quite random, or? Maybe looking at it from a different angle helps...
+								<p>Could you already find a pattern in the previous section?
 									<br>
-									<br>
-									Play with the different sliders and see how music features predict a user's mental health.
+									It was quite random, or? Maybe looking at it from a different angle helps...
 								</p>
 							</header>
 						</div>
 					</div>
+				</div>
+			</div>
+			<a href="#four" class="goto-next scrolly">Next</a>
+
+
+		</section>
+
+		<!-- Four -->
+		<section id="four" class="spotlight style3 bottom mb-10"
+			style="overflow: visible;">
+
+			<div class="content">
+				<div class="container">
+
+
+					<header>
+						<h2>
+							Play with the different sliders and see how music features predict a user's mental
+							health.
+						</h2>
+					</header>
+
 					<div class="row">
 						<div class="col-md-4">
 							<div id="sliders"></div>
 						</div>
 						<div class="col-md-8">
 							<div id="chart-container"
-								style="position: relative; width: 100%; max-width: 800px; margin: 0 auto;">
-								<svg id="prediction-chart" width="700" height="500"></svg>
+								style="position: relative; width: 100%; max-width: 600px; margin: 0 auto;">
+								<svg id="prediction-chart" width="500" height="400"></svg>
 
 								<div id="legend-overlay_2" style="
 									position: absolute;
@@ -347,7 +368,7 @@
 				</div>
 				<a href="#five" class="goto-next scrolly">Next</a>
 				<script src="https://d3js.org/d3.v7.min.js"></script>
-				<script src="assets/js/explore_dataset_model.js"></script>
+				<script src="assets/js/explore_dataset_features.js"></script>
 		</section>
 
 		<!-- Five -->
@@ -357,7 +378,7 @@
 					width: 100%;
 					min-height: 300px;
 					background-color: #000033;
-					
+
 					position: relative;
 					z-index: 1;
 					margin-bottom: 2rem;
@@ -395,30 +416,31 @@
 
 		<section id="six" class="spotlight style3 left">
 			<style>
-			#correlation2 {
-			width: 100%;
-			min-height: 300px;
-			background-color: #000033;
-			border: 3px dashed #1c1d26;
-			position: relative;
-			z-index: 1;
-			margin-bottom: 2rem; /* Push the legend down */
-			}
+				#correlation2 {
+					width: 100%;
+					min-height: 300px;
+					background-color: #000033;
+					border: 3px dashed #1c1d26;
+					position: relative;
+					z-index: 1;
+					margin-bottom: 2rem;
+					/* Push the legend down */
+				}
 
 
 
-			 #four {
-				 position: relative;
-				 z-index: 1;
-				 background-color:#1c1d26;
-				 text-align: center;
-    			 padding: 1em 0;
-			 }
+				#four {
+					position: relative;
+					z-index: 1;
+					background-color: #1c1d26;
+					text-align: center;
+					padding: 1em 0;
+				}
 
-					.spotlight.style3.left::before {
-						display: none !important;
-						/* removes background image layer if present */
-					}
+				.spotlight.style3.left::before {
+					display: none !important;
+					/* removes background image layer if present */
+				}
 			</style>
 			<div id="correlation2"></div>
 			<a href="#seven" class="goto-next scrolly">Next</a>
@@ -436,7 +458,7 @@
 
 
 
-	
+
 
 
 
