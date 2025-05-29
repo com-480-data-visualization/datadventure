@@ -49,14 +49,27 @@ document.addEventListener('DOMContentLoaded', function () {
         alert(`Clicked: ${d.text}`);
       });
   
-    node.append('text')
+      node.append('text')
       .text(d => d.text)
       .attr('text-anchor', 'middle')
       .attr('dy', '.3em')
       .attr('fill', 'white')
-      .style('pointer-events', 'none');
+      .style('pointer-events', 'none')
+      .style('font-size', d => {
+        if (d.text === "Blood Pressure") {
+          return '10px';
+        }
+        return '14px';
+      });
+    
   
     function ticked() {
+      node.each(d => {
+        // Clamp x/y positions so bubbles stay inside the bounds
+        d.x = Math.max(d.radius, Math.min(width - d.radius, d.x));
+        d.y = Math.max(d.radius, Math.min(height - d.radius, d.y));
+      });
+      
       node.attr('transform', d => `translate(${d.x},${d.y})`);
     }
   
