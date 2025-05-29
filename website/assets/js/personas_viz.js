@@ -16,11 +16,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const container = d3.select("#persona-viz");
   const colorMap = {
-    country:         "#3A5F3E",  // dark olive green
-    kpop:            "#DC8C78",  // soft peach
-    pop:             "#B6572C",  // burnt red
-    rnb:             "#AFC07A",  // pale olive
-    videoGameMusic:  "#A67A3F"   // warm mustard brown
+    country:        "#009688",  // teal
+    kpop:           "#3F51B5",  // indigo
+    pop:            "#FFC107",  // amber
+    rnb:            "#E91E63",  // pink
+    videoGameMusic: "#FF5722"   // deep orange
   };
   const radiusScale = d3.scaleSqrt().domain([0,3]).range([8,60]);
   const svgW = 300, svgH = 200;
@@ -80,7 +80,6 @@ document.addEventListener("DOMContentLoaded", () => {
       .text(`Person ${i+1}`)
       .style("text-align","center");
 
-    // svg
     const svg = card.append("svg")
       .attr("width", svgW)
       .attr("height", svgH);
