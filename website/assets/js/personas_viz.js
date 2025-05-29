@@ -1,13 +1,13 @@
-// 1) Preload audio clips
+// preload audio clips
 const correctAudio = new Audio("assets/sounds/correct.mp3");
 const wrongAudio   = new Audio("assets/sounds/wrong.mp3");
 correctAudio.volume = 0.1;
 wrongAudio.volume   = 0.1;
 
-// 2) Grab the explanation box (hidden by default)
+// explanation box (hidden by default)
 const explanation = document.getElementById("personas-explanation-box");
 
-// 3) When DOM is ready, build the viz
+// when DOM is ready, build the viz
 document.addEventListener("DOMContentLoaded", () => {
   const data = window.listeners;
   if (!data) {
@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const container = d3.select("#persona-viz");
 
-  // 4) Color map
+  // define colors
   const colorMap = {
     country:        "#009688",  // teal
     kpop:           "#3F51B5",  // indigo
@@ -26,15 +26,15 @@ document.addEventListener("DOMContentLoaded", () => {
     videoGameMusic: "#FF5722"   // deep orange
   };
 
-  // 5) Radius scale: frequency 0→3 maps to 8→60px
+  // radius mapping: frequency 0 -> 3 maps to 8 -> 60px
   const radiusScale = d3.scaleSqrt()
     .domain([0,3])
     .range([10,45]);
 
-  // 6) SVG coordinate system size
+  // SVG coordinate system size
   const svgW = 300, svgH = 200;
 
-  // 7) Fixed genre order & “dice‐5” base positions
+  // fixed genre order 
   const genreOrder = [
     "country",        // top-left
     "kpop",           // top-right
@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
     { x: 260, y: 160 }   // BR
   ];
 
-  // 8) Optional “jitter” to avoid perfect symmetry
+  // adding "randomness" to avoid perfect symmetry
   function jitter(pos) {
     const amt = 10; // ±10px
     return {
@@ -60,9 +60,9 @@ document.addEventListener("DOMContentLoaded", () => {
     };
   }
 
-  // 9) Build one card per person
+  // build one card per person
   data.forEach((person, i) => {
-    // 9a) Card container
+    // card container
     const card = container.append("div")
       .attr("class","persona-card")
       .on("mouseover", () => card.classed("hovered", true))
@@ -91,19 +91,19 @@ document.addEventListener("DOMContentLoaded", () => {
         explanation.classList.add("visible");
       });
 
-    // 9b) Label
+    // label
     card.append("div")
       .attr("class","persona-label")
       .text(`Person ${i+1}`);
 
-    // 9c) Responsive SVG
+    // responsive SVG
     const svg = card.append("svg")
       .attr("viewBox", `0 0 ${svgW} ${svgH}`)
       .attr("preserveAspectRatio", "xMidYMid meet")
       .style("width", "100%")
       .style("height", "auto");
 
-    // 9d) Compute nodes with jittered positions
+    // compute nodes with "random" positions
     const nodes = genreOrder.map((genre, idx) => {
       const pos = jitter(basePositions[idx]);
       const val = person.frequencies[genre];
@@ -116,7 +116,7 @@ document.addEventListener("DOMContentLoaded", () => {
       };
     });
 
-    // 9e) Draw circles
+    // draw circles
     svg.selectAll("circle")
       .data(nodes)
       .join("circle")

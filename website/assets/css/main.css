@@ -4629,3 +4629,48 @@ body.no-scroll {
     max-width: 100%;
   }
 }
+
+/* one container for both */
+#correlation-container {
+position: relative;
+width: 100%;
+height: 300px;
+background-color: #000033;
+margin-bottom: 2rem;
+}
+
+/* charts stack on top of each other */
+#correlation1,
+#correlation2 {
+position: absolute;
+top: 0; left: 0;
+width: 100%; height: 100%;
+}
+/* only show #correlation1 at first */
+#correlation2 { display: none; }
+
+/* toggle button styles */
+.corr-toggle { text-align: center; margin-bottom: 1rem; }
+.corr-toggle button {
+background: transparent;
+border: 1px solid #ccc;
+color: #fff;
+padding: 0.5em 1em;
+margin: 0 0.5em;
+cursor: pointer;
+}
+.corr-toggle button.active {
+background: #fff; color: #000; border-color: #fff;
+}
+
+/* centers the headline in section #five */
+#five header h2 {
+  text-align: center;
+  margin: 0 auto; 
+  width: fit-content;
+}
+
+.text-center {
+  text-align: center;
+}
+
