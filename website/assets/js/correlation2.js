@@ -1,24 +1,24 @@
 document.addEventListener('DOMContentLoaded', function () {
     const data = [
-        { id: 1, color: '#2ECC40', radius: 70, text: 'Self-Esteem' },
-        { id: 2, color: '#FF4136', radius: 44, text: 'Blood Pressure' },
-        { id: 3, color: '#FF4136', radius: 66, text: 'Headache' },
-        { id: 4, color: '#2ECC40', radius: 69, text: 'Sleep Quality' },
-        { id: 5, color: '#2ECC40', radius: 62, text: 'Social Support' },
-        { id: 6, color: '#FF4136', radius: 67, text: 'Bullying' },
-        { id: 7, color: '#FF4136', radius: 73, text: 'Stress Level' },
-        { id: 8, color: '#2ECC40', radius: 69, text: 'Safety' },
+        { id: 1, color: '#2ECC40', radius: 67, text: 'Self-Esteem' },
+        { id: 2, color: '#FF4136', radius: 33, text: 'Blood Pressure' },
+        { id: 3, color: '#FF4136', radius: 63, text: 'Headache' },
+        { id: 4, color: '#2ECC40', radius: 71, text: 'Sleep Quality' },
+        { id: 5, color: '#2ECC40', radius: 57, text: 'Social Support' },
+        { id: 6, color: '#FF4136', radius: 71, text: 'Bullying' },
+        { id: 7, color: '#FF4136', radius: 74, text: 'Stress Level' },
+        { id: 8, color: '#2ECC40', radius: 65, text: 'Safety' },
         { id: 9, color: '#FF4136', radius: 71, text: 'Career Concerns' },
         { id: 10, color: '#FF4136', radius: 53, text: 'Noise Level' },
         { id: 11, color: '#FF4136', radius: 64, text: 'Peer Pressure' },
-        { id: 12, color: '#2ECC40', radius: 63, text: 'Work Performance' },
-        { id: 13, color: '#FF4136', radius: 64, text: 'Work Load' },
+        { id: 12, color: '#2ECC40', radius: 65, text: 'Work Performance' },
+        { id: 13, color: '#FF4136', radius: 59, text: 'Work Load' },
       ];
       
     const width = window.innerWidth;
     const height = 600;
   
-    const svg = d3.select('#correlation1')
+    const svg = d3.select('#correlation2')
       .append('svg')
       .attr('width', width)
       .attr('height', height)
@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function () {
         .attr('fill', d => d.color)
         .attr('fill-opacity', 0.6)
         .attr('stroke', d => d.color)
-        .attr('stroke-width', 2)
+        .attr('stroke-width', 4)
         .on('click', function (event, d) {
         alert(`Clicked: ${d.text}`);
       });
@@ -57,19 +57,20 @@ document.addEventListener('DOMContentLoaded', function () {
       .style('pointer-events', 'none')
       .style('font-size', d => {
         if (d.text === "Blood Pressure") {
-          return '12px';
+          return '10px';
         }
         return '14px';
       });
     
+  
     function ticked() {
-        node.each(d => {
-            // Clamp x/y positions so bubbles stay inside the bounds
-            d.x = Math.max(d.radius, Math.min(width - d.radius, d.x));
-            d.y = Math.max(d.radius, Math.min(height - d.radius, d.y));
-          });
+      node.each(d => {
+        // Clamp x/y positions so bubbles stay inside the bounds
+        d.x = Math.max(d.radius, Math.min(width - d.radius, d.x));
+        d.y = Math.max(d.radius, Math.min(height - d.radius, d.y));
+      });
       
-        node.attr('transform', d => `translate(${d.x},${d.y})`);
+      node.attr('transform', d => `translate(${d.x},${d.y})`);
     }
   
     function dragStarted(event, d) {
