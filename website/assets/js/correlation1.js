@@ -57,7 +57,13 @@ document.addEventListener('DOMContentLoaded', function () {
       .style('pointer-events', 'none');
   
     function ticked() {
-      node.attr('transform', d => `translate(${d.x},${d.y})`);
+        node.each(d => {
+            // Clamp x/y positions so bubbles stay inside the bounds
+            d.x = Math.max(d.radius, Math.min(width - d.radius, d.x));
+            d.y = Math.max(d.radius, Math.min(height - d.radius, d.y));
+          });
+      
+        node.attr('transform', d => `translate(${d.x},${d.y})`);
     }
   
     function dragStarted(event, d) {

@@ -3,16 +3,16 @@ document.addEventListener('DOMContentLoaded', function () {
         { id: 1, color: '#2ECC40', radius: 67, text: 'Self-Esteem' },
         { id: 2, color: '#FF4136', radius: 33, text: 'Blood Pressure' },
         { id: 3, color: '#FF4136', radius: 63, text: 'Headache' },
-        { id: 4, color: '#2ECC40', radius: 69, text: 'Sleep Quality' },
-        { id: 5, color: '#2ECC40', radius: 62, text: 'Social Support' },
-        { id: 6, color: '#FF4136', radius: 67, text: 'Bullying' },
-        { id: 7, color: '#FF4136', radius: 73, text: 'Stress Level' },
-        { id: 8, color: '#2ECC40', radius: 69, text: 'Safety' },
+        { id: 4, color: '#2ECC40', radius: 71, text: 'Sleep Quality' },
+        { id: 5, color: '#2ECC40', radius: 57, text: 'Social Support' },
+        { id: 6, color: '#FF4136', radius: 71, text: 'Bullying' },
+        { id: 7, color: '#FF4136', radius: 74, text: 'Stress Level' },
+        { id: 8, color: '#2ECC40', radius: 65, text: 'Safety' },
         { id: 9, color: '#FF4136', radius: 71, text: 'Career Concerns' },
         { id: 10, color: '#FF4136', radius: 53, text: 'Noise Level' },
         { id: 11, color: '#FF4136', radius: 64, text: 'Peer Pressure' },
-        { id: 12, color: '#2ECC40', radius: 63, text: 'Work Performance' },
-        { id: 13, color: '#FF4136', radius: 64, text: 'Work Load' },
+        { id: 12, color: '#2ECC40', radius: 65, text: 'Work Performance' },
+        { id: 13, color: '#FF4136', radius: 59, text: 'Work Load' },
       ];
       
     const width = window.innerWidth;
