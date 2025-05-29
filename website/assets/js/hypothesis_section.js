@@ -85,9 +85,7 @@ window.addEventListener("mousemove", (e) => {
 
 window.addEventListener("DOMContentLoaded", () => {
 
-    setTimeout(() => {
-        document.getElementById("hypothesis-content").style.opacity = 1;
-    }, 5000);
+
 
 
     if (!note || !staff || !container) {
@@ -149,4 +147,38 @@ function playNoteSound(index) {
         audio.play().catch(e => console.log("Note sound blocked:", e));
     }
 }
+
+
+window.addEventListener("load", () => {
+    const ball = document.getElementById("countdown-ball");
+    const contentEl = document.getElementById("hypothesis-content");
+
+    let count = 10;
+    let scale = 1;
+
+    // Fade in
+    setTimeout(() => {
+        ball.style.opacity = 1;
+    }, 100); // Slight delay ensures transition triggers
+
+    const interval = setInterval(() => {
+        count--;
+        scale -= 0.1;
+
+        ball.style.transform = `translate(-50%, -50%) scale(${scale})`;
+        ball.style.boxShadow = `0 0 ${40 - count * 5}px rgba(255, 255, 255, ${0.2 + 0.15 * count})`;
+
+        if (count <= 0) {
+            clearInterval(interval);
+
+            // Fade out
+            ball.style.opacity = 0;
+
+            setTimeout(() => {
+                ball.remove(); // Remove after fade-out completes
+                contentEl.style.opacity = 1; // Show content
+            }, 1000); // Match CSS fade-out time
+        }
+    }, 1000);
+});
 

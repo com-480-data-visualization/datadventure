@@ -4389,15 +4389,15 @@ body.is-touch #banner {
 
 
 /* PERSONAS QUIZ */
-	/* make the H2 white and give it room */
-	#one header h2 {
+/* make the H2 white and give it room */
+#one header h2 {
 	color: white;
 	margin-bottom: 1rem;
 	text-align: center;
-	}
+}
 
-	/* flex-row container for the 3 personas */
-	#persona-viz {
+/* flex-row container for the 3 personas */
+#persona-viz {
 	display: flex;
 	justify-content: space-between;
 	flex-wrap: wrap;
@@ -4405,68 +4405,71 @@ body.is-touch #banner {
 	margin: 1.5rem 0;
 	overflow: visible;
 	width: 100%;
-	}
+}
 
-	/* each persona card */
-	.persona-card {
+/* each persona card */
+.persona-card {
 	flex: 0 0 calc(33% - 1rem);
 	border: 1px solid white;
 	padding: 0.75rem;
 	box-sizing: border-box;
-	background: rgba(255,255,255,0.05);
+	background: rgba(255, 255, 255, 0.05);
 	position: relative;
 	transition: transform 0.2s ease, outline 0.2s ease;
-	}
+}
 
-	/* label transitions */
-	.persona-label {
+/* label transitions */
+.persona-label {
 	transition: font-size 0.2s ease, color 0.2s ease;
-	}
+}
 
-	/* ensure the svg inside can show full bubbles */
-	.persona-card svg {
+/* ensure the svg inside can show full bubbles */
+.persona-card svg {
 	overflow: visible;
 	width: 100%;
 	height: auto;
-	}
+}
 
-	/* hover state: white outline, scale up */
-	.persona-card.hovered {
+/* hover state: white outline, scale up */
+.persona-card.hovered {
 	transform: scale(1.05);
 	outline: 2px solid white;
 	outline-offset: -2px;
 	z-index: 10;
-	}
-	.persona-card.hovered .persona-label {
-	font-size: 1.2em;
-	}
+}
 
-	/* wrong selection: red outline, scale up */
-	.persona-card.selected-wrong {
+.persona-card.hovered .persona-label {
+	font-size: 1.2em;
+}
+
+/* wrong selection: red outline, scale up */
+.persona-card.selected-wrong {
 	transform: scale(1.05);
 	outline: 2px solid red;
 	outline-offset: -2px;
 	z-index: 10;
-	}
-	.persona-card.selected-wrong .persona-label {
+}
+
+.persona-card.selected-wrong .persona-label {
 	font-size: 1.2em;
 	color: red;
-	}
+}
 
-	/* correct selection: green outline, scale up */
-	.persona-card.selected-correct {
+/* correct selection: green outline, scale up */
+.persona-card.selected-correct {
 	transform: scale(1.05);
 	outline: 2px solid limegreen;
 	outline-offset: -2px;
 	z-index: 10;
-	}
-	.persona-card.selected-correct .persona-label {
+}
+
+.persona-card.selected-correct .persona-label {
 	font-size: 1.2em;
 	color: limegreen;
-	}
+}
 
-	/* personas explaination box*/
-	.personas-explanation-box {
+/* personas explaination box*/
+.personas-explanation-box {
 	opacity: 0;
 	transition: opacity 0.4s ease;
 	color: #ccc;
@@ -4476,58 +4479,78 @@ body.is-touch #banner {
 	text-align: center;
 	line-height: 1.4;
 	margin-bottom: 4rem;
-	}
+}
 
-	/* making personas explaination box visible*/
-	.personas-explanation-box.visible {
+/* making personas explaination box visible*/
+.personas-explanation-box.visible {
 	opacity: 1;
-	}
+}
 
 
-	/* legend spacing */
-	.legend-row {
+/* legend spacing */
+.legend-row {
 	margin: 1rem 0 2rem;
-	}
-	.legend-swatch {
+}
+
+.legend-swatch {
 	display: inline-block;
 	width: 12px;
 	height: 12px;
 	margin-right: 6px;
-	}
+}
 
-	#legend-banner {
-	  background-color: #1c1d26;
-	  padding: 20px;
-	  text-align: center;
-	  color: white;
-	  font-family: sans-serif;
-	}
+#legend-banner {
+	background-color: #1c1d26;
+	padding: 20px;
+	text-align: center;
+	color: white;
+	font-family: sans-serif;
+}
 
-	#legend-banner h2 {
-	  margin-bottom: 10px;
-	  font-size: 24px;
-	}
+#legend-banner h2 {
+	margin-bottom: 10px;
+	font-size: 24px;
+}
 
-	.legend {
-	  display: inline-block;
-	  margin: 0 10px;
-	  font-weight: bold;
-	  font-size: 16px;
-	}
+.legend {
+	display: inline-block;
+	margin: 0 10px;
+	font-weight: bold;
+	font-size: 16px;
+}
 
-	.legend.red {
-		color: #FF4136;
-	  }
-	  .legend.green {
-		color: #2ECC40;
-	  }
-	  .legend.white {
-		color: white;
-	  }
-	  
+.legend.red {
+	color: #FF4136;
+}
 
-	  #correlation1 {
-	    width: 100%;
-	    height: 80%;
-	    background-color: #1c1d26; /* dark bg to contrast circles */
-	  }
+.legend.green {
+	color: #2ECC40;
+}
+
+.legend.white {
+	color: white;
+}
+
+
+#correlation1 {
+	width: 100%;
+	height: 80%;
+	background-color: #1c1d26;
+	/* dark bg to contrast circles */
+}
+
+#countdown-ball {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%) scale(1.2);
+	width: 120px;
+	height: 120px;
+	border-radius: 50%;
+	background-color: white;
+	box-shadow: 0 0 30px rgba(255, 255, 255, 0.8);
+	opacity: 0;
+	/* start invisible */
+	transition: transform 1s ease, box-shadow 0.8s ease, opacity 1s ease;
+	z-index: 9999;
+}
