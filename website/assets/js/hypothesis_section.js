@@ -27,6 +27,9 @@ note.addEventListener("mousedown", (e) => {
 });
 
 window.addEventListener("mouseup", () => {
+    if (isDragging === false) return; // Only execute this code if we were dragging before
+
+
     isDragging = false;
     note.style.cursor = "grab";
 
