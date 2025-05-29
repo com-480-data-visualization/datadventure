@@ -68,14 +68,20 @@
 				document.addEventListener("DOMContentLoaded", () => {
 					const overlay = document.getElementById("start-overlay");
 					const bannerContent = document.getElementById("banner-content");
+					const scrolly = document.getElementById("banner-scrolly");
+
+					document.body.classList.add("no-scroll");
 
 					overlay.addEventListener("click", () => {
 						overlay.classList.add("fade-out");
 						setTimeout(() => {
 							overlay.style.display = "none";
 							bannerContent.classList.remove("hidden");
+							scrolly.classList.remove("hidden");
 							bannerContent.classList.add("visible");
+							scrolly.classList.add("visible");
 						}, 1100); // match CSS transition duration
+						document.body.classList.remove("no-scroll");
 					});
 				});
 			</script>
@@ -87,7 +93,7 @@
 						But is this true? let's look beyond the clichés at the data</p>
 				</header>
 			</div>
-			<a href="#one" class="goto-next scrolly">Next</a>
+			<a href="#one" class="goto-next scrolly hidden" id="banner-scrolly">Next</a>
 		</section>
 
 

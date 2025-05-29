@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
     function tryStartMusicOnce() {
         if (!music.paused) return;
 
-        music.volume = 0.6;
+        music.volume = 1;
         music.play().then(() => {
             console.log("Music started successfully.");
             icon.textContent = "🔊";
