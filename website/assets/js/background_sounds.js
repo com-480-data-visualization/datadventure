@@ -8,13 +8,21 @@ document.addEventListener("DOMContentLoaded", () => {
         icon.textContent = music.paused ? "🔇" : "🔊";
     }
 
-    document.addEventListener("mousemove", () => {
-        if (music.paused) {
-            music.volume = 0.6;
-            music.play().catch(e => console.log("Autoplay blocked:", e));
+    function tryStartMusicOnce() {
+        if (!music.paused) return;
+
+        music.volume = 0.6;
+        music.play().then(() => {
+            console.log("Music started successfully.");
             icon.textContent = "🔊";
-        }
-    }, { once: true });
+            document.removeEventListener("click", tryStartMusicOnce);
+        }).catch(e => {
+            console.log("Autoplay blocked:", e);
+            // Don't remove the listener, since starting the sound failed, probably due to autoplay restrictions.
+        });
+    }
+
+    document.addEventListener("click", tryStartMusicOnce);
 
     toggleBtn.addEventListener("click", (e) => {
         e.preventDefault();

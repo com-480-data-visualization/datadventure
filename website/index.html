@@ -60,7 +60,27 @@
 		<!-- Banner -->
 		<section id="banner">
 
-			<div class="content">
+			<div id="start-overlay">
+				<h2>Click here to start</h2>
+			</div>
+
+			<script>
+				document.addEventListener("DOMContentLoaded", () => {
+					const overlay = document.getElementById("start-overlay");
+					const bannerContent = document.getElementById("banner-content");
+
+					overlay.addEventListener("click", () => {
+						overlay.classList.add("fade-out");
+						setTimeout(() => {
+							overlay.style.display = "none";
+							bannerContent.classList.remove("hidden");
+							bannerContent.classList.add("visible");
+						}, 1100); // match CSS transition duration
+					});
+				});
+			</script>
+
+			<div class="content hidden" id="banner-content">
 				<header>
 					<h2>Is the music you listen to connected to your Mental Health?</h2>
 					<p>Pop makes you happy. Rock makes you angsty.<br />
