@@ -173,7 +173,7 @@ window.addEventListener("DOMContentLoaded", () => {
 });
 
 function startCountdown(ball, contentEl) {
-    let count = 10;
+    let count = 100;
     let scale = 1;
 
     // Fade in
@@ -183,7 +183,7 @@ function startCountdown(ball, contentEl) {
 
     const interval = setInterval(() => {
         count--;
-        scale -= 0.1;
+        scale -= 0.01;
 
         ball.style.transform = `translate(-50%, -50%) scale(${scale})`;
         ball.style.boxShadow = `0 0 ${40 - count * 5}px rgba(255, 255, 255, ${0.2 + 0.15 * count})`;
@@ -199,7 +199,7 @@ function startCountdown(ball, contentEl) {
                 contentEl.style.opacity = 1;
             }, 1000);
         }
-    }, 1000);
+    }, 100);
 }
 
 
