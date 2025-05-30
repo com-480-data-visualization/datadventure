@@ -5,20 +5,25 @@ document.addEventListener('DOMContentLoaded', function () {
   const { width, height } = containerEl.getBoundingClientRect();
 
   const data = [
-    { id: 1, color: '#2ECC40', radius: 70, text: 'Self-Esteem' },
-    { id: 2, color: '#FF4136', radius: 44, text: 'Blood Pressure' },
-    { id: 3, color: '#FF4136', radius: 66, text: 'Headache' },
-    { id: 4, color: '#2ECC40', radius: 69, text: 'Sleep Quality' },
-    { id: 5, color: '#2ECC40', radius: 62, text: 'Social Support' },
-    { id: 6, color: '#FF4136', radius: 67, text: 'Bullying' },
-    { id: 7, color: '#FF4136', radius: 73, text: 'Stress Level' },
-    { id: 8, color: '#2ECC40', radius: 69, text: 'Safety' },
-    { id: 9, color: '#FF4136', radius: 71, text: 'Career Concerns' },
-    { id: 10, color: '#FF4136', radius: 53, text: 'Noise Level' },
-    { id: 11, color: '#FF4136', radius: 64, text: 'Peer Pressure' },
-    { id: 12, color: '#2ECC40', radius: 63, text: 'Work Performance' },
-    { id: 13, color: '#FF4136', radius: 64, text: 'Work Load' },
+    { id: 1, color: '#2ECC40', corr_factor: 70, text: 'Self-Esteem' },
+    { id: 2, color: '#FF4136', corr_factor: 44, text: 'Blood Pressure' },
+    { id: 3, color: '#FF4136', corr_factor: 66, text: 'Headache' },
+    { id: 4, color: '#2ECC40', corr_factor: 69, text: 'Sleep Quality' },
+    { id: 5, color: '#2ECC40', corr_factor: 62, text: 'Social Support' },
+    { id: 6, color: '#FF4136', corr_factor: 67, text: 'Bullying' },
+    { id: 7, color: '#FF4136', corr_factor: 73, text: 'Stress Level' },
+    { id: 8, color: '#2ECC40', corr_factor: 69, text: 'Safety' },
+    { id: 9, color: '#FF4136', corr_factor: 71, text: 'Career Concerns' },
+    { id: 10, color: '#FF4136', corr_factor: 53, text: 'Noise Level' },
+    { id: 11, color: '#FF4136', corr_factor: 64, text: 'Peer Pressure' },
+    { id: 12, color: '#2ECC40', corr_factor: 63, text: 'Work Performance' },
+    { id: 13, color: '#FF4136', corr_factor: 64, text: 'Work Load' },
   ];
+
+  // Calculate radius based on correlation factor
+  data.forEach(d => {
+    d.radius = Math.sqrt(d.corr_factor / Math.PI) * 12;
+  });
 
 
   const svg = d3.select('#correlation1')
