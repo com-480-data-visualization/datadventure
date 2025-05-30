@@ -51,10 +51,7 @@ document.addEventListener('DOMContentLoaded', function () {
     .attr('fill', d => d.color)
     .attr('fill-opacity', 0.6)
     .attr('stroke', d => d.color)
-    .attr('stroke-width', 2)
-    .on('click', function (event, d) {
-      alert(`Clicked: ${d.text}`);
-    });
+    .attr('stroke-width', 2);
 
   node.append('text')
     .text(d => d.text)
