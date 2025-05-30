@@ -395,51 +395,32 @@
 		<!-- Five -->
 		<section id="five" class="spotlight style3 top">
 			<style>
-				@media (max-width: 768px) {
-					#five .content-wrapper {
-						flex-direction: column;
-					}
+  #five .image img {
+    width: 100%;
+    max-width: 400px;   /* ✅ smaller cap */
+    height: auto;
+    max-height: 600px;  /* ✅ keep it short */
+    border-radius: 8px;
+    display: block;
+    margin: 0 auto;
+  }
 
-					#five .text {
-						padding-right: 0;
-						margin-bottom: 2rem;
-					}
+  @media (max-width: 768px) {
+    #five .content-wrapper {
+      flex-direction: column;
+    }
 
-					#five .image {
-						text-align: center;
-					}
-					/* Container for image + tooltip */
-					#five .hover-caption {
-					position: relative;
-					display: inline-block;
-					}
+    #five .text {
+      padding-right: 0;
+      margin-bottom: 2rem;
+    }
 
-					/* Hidden tooltip box */
-					#five .tooltip-text {
-					visibility: hidden;
-					background-color: rgba(0, 0, 0, 0.85);
-					color: #fff;
-					text-align: center;
-					border-radius: 6px;
-					padding: 0.5em 1em;
-					font-size: 0.9em;
-					position: absolute;
-					bottom: -3.5em;
-					right: 0;
-					white-space: nowrap;
-					z-index: 10;
-					opacity: 0;
-					transition: opacity 0.3s;
-					}
+    #five .image {
+      text-align: center;
+    }
+  }
+</style>
 
-					/* Show tooltip on hover */
-					#five .hover-caption:hover .tooltip-text {
-					visibility: visible;
-					opacity: 1;
-					}
-
-				}
-			</style>
 
 			<div class="content">
 				<div class="container">
@@ -475,7 +456,7 @@
 								<div class="tooltip-text">
 								</div>
 							  </div>
-                            	<em>"Paisley Rabbit and the Treehouse Contest"</em> by artist Chris Dunillos						  
+                            	<em>"              Paisley Rabbit and the Treehouse Contest"</em> by artist Chris Dunillos						  
 						</div>
 					</div>
 					<a href="#six" class="goto-next scrolly">Next</a>
