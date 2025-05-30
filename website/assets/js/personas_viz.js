@@ -89,6 +89,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // show explanation text
         explanation.classList.add("visible");
+
+        // REVEAL the Next‐arrow:
+        document.getElementById("next-one")
+          .classList.remove("disabled");
       });
 
     // label
