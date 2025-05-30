@@ -15,14 +15,13 @@ document.addEventListener('DOMContentLoaded', function () {
         { id: 13, color: '#FF4136', radius: 64, text: 'Work Load' },
       ];
       
-    const width = window.innerWidth;
-    const height = 600;
+    const width = 600;
+    const height = 400;
   
     const svg = d3.select('#correlation1')
       .append('svg')
       .attr('width', width)
       .attr('height', height)
-      .style('background-color', '#15161e');
   
     const simulation = d3.forceSimulation(data)
       .force('charge', d3.forceManyBody().strength(5))

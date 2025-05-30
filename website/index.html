@@ -110,7 +110,8 @@
 						<div class="col-12">
 							<header>
 								<h2>Try to figure out: Which of the listeners self-report as depressed?</h2>
-								<p>The size of the bubbles represents how often the person listens to that specific genre.</p>
+								<p>The size of the bubbles represents how often the person listens to that specific
+									genre.</p>
 							</header>
 						</div>
 					</div>
@@ -124,13 +125,13 @@
 
 					<!-- legend -->
 					<div class="row legend-row">
-					<div class="col-12 text-center">
-						<span class="legend-swatch" style="background:#009688;"></span>Country
-						<span class="legend-swatch" style="background:#3F51B5;"></span>K-pop
-						<span class="legend-swatch" style="background:#FFC107;"></span>Pop
-						<span class="legend-swatch" style="background:#E91E63;"></span>R&amp;B
-						<span class="legend-swatch" style="background:#FF5722;"></span>Video-game music
-					</div>
+						<div class="col-12 text-center">
+							<span class="legend-swatch" style="background:#009688;"></span>Country
+							<span class="legend-swatch" style="background:#3F51B5;"></span>K-pop
+							<span class="legend-swatch" style="background:#FFC107;"></span>Pop
+							<span class="legend-swatch" style="background:#E91E63;"></span>R&amp;B
+							<span class="legend-swatch" style="background:#FF5722;"></span>Video-game music
+						</div>
 					</div>
 
 				</div>
@@ -281,8 +282,10 @@
 					<div class="row">
 						<div class="col-12">
 							<header>
-								<h2>Does your hypothesis hold? Let's explore how music habits affect Depression and anxiety</h2>
-								<p>Choose some genres and explore how listening to them affects the mental health of listeners.
+								<h2>Does your hypothesis hold? Let's explore how music habits affect Depression and
+									anxiety</h2>
+								<p>Choose some genres and explore how listening to them affects the mental health of
+									listeners.
 								</p>
 							</header>
 						</div>
@@ -335,8 +338,7 @@
 		</section>
 
 		<!-- Four -->
-		<section id="four" class="spotlight style3 bottom mb-10"
-			style="overflow: visible;">
+		<section id="four" class="spotlight style3 bottom mb-10" style="overflow: visible;">
 
 			<div class="content">
 				<div class="container">
@@ -374,181 +376,119 @@
 				<script src="assets/js/explore_dataset_features.js"></script>
 		</section>
 
-		
+
 		<!-- Five -->
-	<!-- Five -->
-<section id="five" class="spotlight style3 left">
-	<style>
-	  #five {
-		background-color: #1c1d26;
-		color: #ffffff;
-		padding: 4rem 2rem;
-	  }
-  
-	  #five .content-wrapper {
-		display: flex;
-		flex-wrap: wrap;
-		align-items: center;
-		justify-content: space-between;
-		max-width: 1200px;
-		margin: 0 auto;
-	  }
-  
-	  #five .text {
-		flex: 1 1 55%;
-		padding-right: 2rem;
-	  }
-  
-	  #five .text h2 {
-		margin-bottom: 1rem;
-	  }
-  
-	  #five .text p {
-		font-size: 1.1em;
-		line-height: 1.6em;
-		margin-bottom: 1rem;
-	  }
-  
-	  #five .image {
-		flex: 1 1 40%;
-		text-align: right;
-	  }
-  
-	  #five .image img {
-		max-width: 100%;
-		border-radius: 10px;
-	  }
-  
-	  @media (max-width: 768px) {
-		#five .content-wrapper {
-		  flex-direction: column;
-		}
-  
-		#five .text {
-		  padding-right: 0;
-		  margin-bottom: 2rem;
-		}
-  
-		#five .image {
-		  text-align: center;
-		}
-	  }
-	</style>
-  
-	<div class="content-wrapper">
-	  <div class="text">
-		<h2>From Music to Lifestyle</h2>
-		<p>
-		  After analyzing the data, we started thinking that maybe it's not music directly affecting mental health,
-		  but rather that <strong>certain music genres tend to align with certain lifestyle choices</strong>.
-		</p>
-		<p>
-		  For instance, someone who listens to gospel might be more likely to be religious, while someone into lofi
-		  could be spending long hours doing computer-based work or studying.
-		</p>
-		<p>
-		  So instead of focusing only on the music, we asked: 
-		  <strong>what lifestyle factors are actually correlated with depression and anxiety?</strong>
-		</p>
-		<p>Let’s dive into that next.</p>
-	  </div>
-	  <div class="image">
-		<img src="images/cozy.jpeg" alt="Cozy scene representing relaxation">
-		<p class="caption">Artwork by Chris Dunillos</p>
-	  </div>
-	  <a href="#six" class="goto-next scrolly">Next</a>
-	</div>
-	
-  </section>
-  
-		
-		
-		
-		
-		
-		
-		
-		
 		<!-- Five -->
-		<section id="six" class="spotlight style3 left">
-		<style>
-			/* one container for both */
-			#correlation-container {
-			position: relative;
-			width: 100%;
-			height: 300px;
-			background-color: #000033;
-			margin-bottom: 2rem;
-			}
+		<section id="five" class="spotlight style3 top">
+			<style>
+				@media (max-width: 768px) {
+					#five .content-wrapper {
+						flex-direction: column;
+					}
 
-			/* charts stack on top of each other */
-			#correlation1,
-			#correlation2 {
-			position: absolute;
-			top: 0; left: 0;
-			width: 100%; height: 100%;
-			}
-			/* only show #correlation1 at first */
-			#correlation2 { display: none; }
+					#five .text {
+						padding-right: 0;
+						margin-bottom: 2rem;
+					}
 
-			/* toggle button styles */
-			.corr-toggle { text-align: center; margin-bottom: 1rem; }
-			.corr-toggle button {
-			background: transparent;
-			border: 1px solid #ccc;
-			color: #fff;
-			padding: 0.5em 1em;
-			margin: 0 0.5em;
-			cursor: pointer;
-			}
-			.corr-toggle button.active {
-			background: #fff; color: #000; border-color: #fff;
-			}
-		</style>
+					#five .image {
+						text-align: center;
+					}
+				}
+			</style>
 
-		<!-- the two toggle buttons -->
-	    <!-- toggle buttons + inline legend -->
-	<div class="corr-toggle">
-		<div style="display: flex; justify-content: space-between; align-items: center;">
-		<div>
-			<button id="btn-depression" class="active">Depression</button>
-			<button id="btn-anxiety">Anxiety</button>
-		</div>
-		<div id="legend-banner" style="text-align: right;">
-			<h2 style="margin: 0;">Factors Correlating with <span id="legend-title">Depression</span></h2>
-			<p style="margin: 0; font-size: 0.9em;">
-			<span class="legend red">positive</span>
-			<span class="legend green">negative</span>
-			<span class="legend white">radius = correlation</span>
-			</p>
-		</div>
-		</div>
-	</div>
-  
+			<div class="content">
+				<div class="container">
+					<div class="row">
+						<div class="col-6">
 
-		<!-- both charts live here, but only one shows at a time -->
-		<div id="correlation-container">
-			<div id="correlation1"></div>
-			<div id="correlation2"></div>
-		</div>
+							<h2>From Music to Lifestyle</h2>
+							<p>
+								After analyzing the data, we started thinking that maybe it's not music directly
+								affecting
+								mental health,
+								but rather that <strong>certain music genres tend to align with certain lifestyle
+									choices</strong>.
+							</p>
+							<p>
+								For instance, someone who listens to gospel might be more likely to be religious, while
+								someone
+								into lofi
+								could be spending long hours doing computer-based work or studying.
+							</p>
+							<p>
+								So instead of focusing only on the music, we asked:
+								<strong>what lifestyle factors are actually correlated with depression and
+									anxiety?</strong>
+							</p>
+							<p>Let’s dive into that next.</p>
+						</div>
 
-	
+						<div class="col-6">
 
-	<!-- Scripts -->
-	<script src="assets/js/jquery.min.js"></script>
-	<script src="assets/js/jquery.scrolly.min.js"></script>
-	<script src="assets/js/jquery.dropotron.min.js"></script>
-	<script src="assets/js/jquery.scrollex.min.js"></script>
-	<script src="assets/js/browser.min.js"></script>
-	<script src="assets/js/breakpoints.min.js"></script>
-	<script src="assets/js/util.js"></script>
-	<script src="https://d3js.org/d3.v7.min.js"></script>
-	<script src="data/personas.js"></script>
-	<script src="assets/js/personas_viz.js"></script>
-	<script src="assets/js/main.js"></script>
-	<script src="assets/js/correlation1.js"></script>
-	<script src="assets/js/correlation2.js"></script>
-	<script src="assets/js/correlation-toggle.js"></script>
+							<div class="image">
+								<img src="images/cozy.jpeg" alt="Cozy scene representing relaxation">
+							</div>
+						</div>
+					</div>
+					<a href="#six" class="goto-next scrolly">Next</a>
+
+				</div>
+			</div>
+
+		</section>
+
+		<!-- Five -->
+		<section id="six" class="spotlight style3 bottom" style="overflow: visible;">
+			<div class="content">
+				<div class="container">
+
+					<!-- the two toggle buttons -->
+					<!-- toggle buttons + inline legend -->
+					<div class="corr-toggle">
+						<div style="display: flex; justify-content: space-between; align-items: center;">
+							<div>
+								<button id="btn-depression" class="active">Depression</button>
+								<button id="btn-anxiety">Anxiety</button>
+							</div>
+							<div id="legend-banner" style="text-align: right;">
+								<h2 style="margin: 0;">Factors Correlating with <span
+										id="legend-title">Depression</span></h2>
+								<p style="margin: 0; font-size: 1.2em;">
+									<span class="legend red">positive</span>
+									<span class="legend green">negative</span>
+									<span class="legend white">radius = correlation</span>
+								</p>
+							</div>
+						</div>
+					</div>
+
+
+					<!-- both charts live here, but only one shows at a time -->
+					<div id="correlation-container">
+						<div id="correlation1"></div>
+						<div id="correlation2"></div>
+					</div>
+				</div>
+			</div>
+
+
+
+			<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="https://d3js.org/d3.v7.min.js"></script>
+			<script src="data/personas.js"></script>
+			<script src="assets/js/personas_viz.js"></script>
+			<script src="assets/js/main.js"></script>
+			<script src="assets/js/correlation1.js"></script>
+			<script src="assets/js/correlation2.js"></script>
+			<script src="assets/js/correlation-toggle.js"></script>
 </body>
 
 </html>
