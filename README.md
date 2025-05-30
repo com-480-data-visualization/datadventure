@@ -24,9 +24,11 @@
 
 ## Milestone 3 (30th May, 5pm)
 
-**80% of the final grade**
+[Our process book for Milestone 3 can be found here](./Process%20Book.pdf)
 
+[Our website can be found here](https://com-480-data-visualization.github.io/datadventure/)
 
+[The screencast can be found here](INCLUDE LINK HERE)
 ## Late policy
 
 - < 24h: 80% of the grade for the milestone
