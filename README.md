@@ -28,6 +28,6 @@
 
 [Our website can be found here](https://com-480-data-visualization.github.io/datadventure/)
 
-[The screencast can be found here](INCLUDE LINK HERE)
+[The screencast can be found here](https://youtu.be/OB6HWK6zL3M?si=9bakNmLF4PmpYRIW)
 
 
