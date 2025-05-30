@@ -10,7 +10,6 @@
 	<noscript>
 		<link rel="stylesheet" href="assets/css/noscript.css" />
 	</noscript>
-	
 	<!-- Standard favicon -->
 	<link rel="shortcut icon" href="images/favicon.ico">
 
@@ -157,7 +156,7 @@
 						tough. But maybe you got lucky: after all, it's a 1-in-3 shot either way.
 					</p>
 				</div>
-				<a href="#two" class="goto-next scrolly disabled" id="next-one">Next</a>
+				<a href="#two" class="goto-next scrolly">Next</a>
 			</div>
 		</section>
 
@@ -409,6 +408,36 @@
 					#five .image {
 						text-align: center;
 					}
+					/* Container for image + tooltip */
+					#five .hover-caption {
+					position: relative;
+					display: inline-block;
+					}
+
+					/* Hidden tooltip box */
+					#five .tooltip-text {
+					visibility: hidden;
+					background-color: rgba(0, 0, 0, 0.85);
+					color: #fff;
+					text-align: center;
+					border-radius: 6px;
+					padding: 0.5em 1em;
+					font-size: 0.9em;
+					position: absolute;
+					bottom: -3.5em;
+					right: 0;
+					white-space: nowrap;
+					z-index: 10;
+					opacity: 0;
+					transition: opacity 0.3s;
+					}
+
+					/* Show tooltip on hover */
+					#five .hover-caption:hover .tooltip-text {
+					visibility: visible;
+					opacity: 1;
+					}
+
 				}
 			</style>
 
@@ -441,11 +470,13 @@
 
 						<div class="col-6">
 
-							<div class="image">
+							<div class="image hover-caption">
 								<img src="images/cozy.jpeg" alt="Cozy scene representing relaxation">
-								
+								<div class="tooltip-text">
+								  <em>"Paisley Rabbit and the Treehouse Contest"</em> by artist Chris Dunillos
+								</div>
 							  </div>
-							  <p class="image-credit">'<em>Paisley Rabbit and the Treehouse Contest</em>' by artist Chris Dunillos</p>
+                            							  
 						</div>
 					</div>
 					<a href="#six" class="goto-next scrolly">Next</a>
