@@ -4533,6 +4533,24 @@ body.no-scroll {
 	opacity: 1;
 }
 
+/* hide disabled arrows: no pointer events and zero opacity */
+.goto-next.disabled {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+/* when enabled, fade back up */
+.goto-next {
+  transition: opacity 0.3s ease;
+}
+
+/* Lock section 1 to viewport */
+#one.locked {
+  height: 100vh;
+  overflow: hidden;
+}
+
 
 /* legend spacing */
 .legend-row {
