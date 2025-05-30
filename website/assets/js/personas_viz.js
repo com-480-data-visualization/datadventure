@@ -90,7 +90,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // show explanation text
         explanation.classList.add("visible");
 
-        // REVEAL the Next‐arrow:
+        // reveal the next‐arrow:
         document.getElementById("next-one")
           .classList.remove("disabled");
       });

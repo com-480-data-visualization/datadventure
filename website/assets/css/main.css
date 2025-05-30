@@ -4545,13 +4545,6 @@ body.no-scroll {
   transition: opacity 0.3s ease;
 }
 
-/* Lock section 1 to viewport */
-#one.locked {
-  height: 100vh;
-  overflow: hidden;
-}
-
-
 /* legend spacing */
 .legend-row {
 	margin: 1rem 0 2rem;
@@ -4562,16 +4555,6 @@ body.no-scroll {
 	width: 12px;
 	height: 12px;
 	margin-right: 6px;
-}
-
-#legend-banner {
-	padding: 20px;
-	text-align: center;
-}
-
-#legend-banner h2 {
-	margin-bottom: 10px;
-	font-size: 24px;
 }
 
 .legend {
@@ -4589,16 +4572,6 @@ body.no-scroll {
 	color: #2ECC40;
 }
 
-.legend.white {
-	color: white;
-}
-
-
-#correlation1 {
-	width: 100%;
-	height: 80%;
-}
-
 #countdown-ball {
 	position: fixed;
 	top: 50%;
@@ -4613,12 +4586,6 @@ body.no-scroll {
 	/* start invisible */
 	transition: transform 1s ease, box-shadow 0.8s ease, opacity 1s ease;
 	z-index: 9999;
-}
-
-/* add extra top‐margin before anxiety/depression so it only appears after scrolling */
-.corr-toggle {
-  text-align: center;
-  margin: 4rem 0 1rem;
 }
 
 
@@ -4646,7 +4613,7 @@ body.no-scroll {
 /* one container for both */
 #correlation-container {
 position: relative;
-width: 400px;
+width: 100%;
 height: 400px;
 }
 
@@ -4660,12 +4627,16 @@ top: 0; left: 0;
 #correlation2 { display: none; }
 
 /* toggle button styles */
-.corr-toggle { text-align: center; margin-bottom: 1rem; }
+.corr-toggle { 
+	text-align: center;
+	padding: 20px;
+}
+
 .corr-toggle button {
 background: transparent;
 border: 1px solid #ccc;
 color: #fff;
-padding: 0.5em 1em;
+padding: 12px;
 margin: 0 0.5em;
 cursor: pointer;
 }
