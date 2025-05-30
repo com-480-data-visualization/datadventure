@@ -29,8 +29,5 @@
 [Our website can be found here](https://com-480-data-visualization.github.io/datadventure/)
 
 [The screencast can be found here](INCLUDE LINK HERE)
-## Late policy
 
-- < 24h: 80% of the grade for the milestone
-- < 48h: 70% of the grade for the milestone
 
