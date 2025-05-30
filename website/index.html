@@ -151,7 +151,7 @@
 				</div>
 				<!-- explanation box that is hidden by default -->
 				<div id="personas-explanation-box" class="personas-explanation-box">
-					<p style="font-size: 1.2rem;">
+					<p>
 						You might wish you had more context, guessing someone's mental health by their music alone is
 						tough. But maybe you got lucky: after all, it's a 1-in-3 shot either way.
 					</p>
@@ -160,7 +160,7 @@
 			</div>
 		</section>
 
-		<section id="two" class="spotlight style1 bottom mb-10" style="scroll-margin-top: 100px;">
+		<section id="two" class="spotlight style1 bottom" style="scroll-margin-top: 100px;">
 			<style>
 				#staff-slider-container {
 					position: relative;
@@ -356,8 +356,10 @@
 
 			<div class="content">
 				<div class="container">
+
+
 					<header>
-						<h2 style="text-align: center;">
+						<h2>
 							Play with the different sliders and see how music features predict a user's mental
 							health.
 						</h2>
@@ -369,7 +371,7 @@
 						</div>
 						<div class="col-md-8">
 							<div id="chart-container"
-								style="position: relative; width: 100%; max-width: 600px; margin: 0 auto; padding-left: 50px;">
+								style="position: relative; width: 100%; max-width: 600px; margin: 0 auto;">
 								<svg id="prediction-chart" width="500" height="400"></svg>
 
 								<div id="legend-overlay_2" style="
@@ -393,73 +395,58 @@
 		<!-- Five -->
 		<section id="five" class="spotlight style3 top">
 			<style>
-				@media (max-width: 768px) {
-					#five .content-wrapper {
-						flex-direction: column;
-					}
+  #five .image img {
+    width: 100%;
+    max-width: 400px;   /* ✅ smaller cap */
+    height: auto;
+    max-height: 600px;  /* ✅ keep it short */
+    border-radius: 8px;
+    display: block;
+    margin: 0 auto;
+  }
 
-					#five .text {
-						padding-right: 0;
-						margin-bottom: 2rem;
-					}
+  @media (max-width: 768px) {
+    #five .content-wrapper {
+      flex-direction: column;
+    }
 
-					#five .image {
-						text-align: center;
-					}
+    #five .text {
+      padding-right: 0;
+      margin-bottom: 2rem;
+    }
 
-					/* Container for image + tooltip */
-					#five .hover-caption {
-						position: relative;
-						display: inline-block;
-					}
+    #five .image {
+      text-align: center;
+    }
+  }
+</style>
 
-					/* Hidden tooltip box */
-					#five .tooltip-text {
-						visibility: hidden;
-						background-color: rgba(0, 0, 0, 0.85);
-						color: #fff;
-						text-align: center;
-						border-radius: 6px;
-						padding: 0.5em 1em;
-						font-size: 0.9em;
-						position: absolute;
-						bottom: -3.5em;
-						right: 0;
-						white-space: nowrap;
-						z-index: 10;
-						opacity: 0;
-						transition: opacity 0.3s;
-					}
-
-					/* Show tooltip on hover */
-					#five .hover-caption:hover .tooltip-text {
-						visibility: visible;
-						opacity: 1;
-					}
-
-				}
-			</style>
 
 			<div class="content">
 				<div class="container">
 					<div class="row">
 						<div class="col-6">
+
+							<h2>From Music to Lifestyle</h2>
 							<p>
-								Do you think that your music habits are connected to your mental health? What kind of
-								patterns did you notice?
-								Do you believe, that the correlations you found are significant, or rather that
-								<strong>certain music genres tend to align with certain lifestyle
+								After analyzing the data, we started thinking that maybe it's not music directly
+								affecting
+								mental health,
+								but rather that <strong>certain music genres tend to align with certain lifestyle
 									choices</strong>.
 							</p>
 							<p>
-								For instance, someone who listens to gospel might be more likely to be religious,
-								while someone
-								into lofi could be spending long hours doing computer-based work or studying.
+								For instance, someone who listens to gospel might be more likely to be religious, while
+								someone
+								into lofi
+								could be spending long hours doing computer-based work or studying.
 							</p>
 							<p>
-								With this insight, lets now have a look at what <strong>lifestyle factors actually have
-									an impact on mental health </strong>.
+								So instead of focusing only on the music, we asked:
+								<strong>what lifestyle factors are actually correlated with depression and
+									anxiety?</strong>
 							</p>
+							<p>Let's dive into that next.</p>
 						</div>
 
 						<div class="col-6">
@@ -468,8 +455,8 @@
 								<img src="images/cozy.jpeg" alt="Cozy scene representing relaxation">
 								<div class="tooltip-text">
 								</div>
-							</div>
-							<em>"Paisley Rabbit and the Treehouse Contest"</em> by artist Chris Dunillos
+							  </div>
+                            	"Paisley Rabbit and the Treehouse Contest" by artist Chris Dunillos						  
 						</div>
 					</div>
 					<a href="#six" class="goto-next scrolly">Next</a>
@@ -491,11 +478,24 @@
 						<p class="legend">area = correlation</p>
 					</div>
 					<div class="corr-toggle">
-						<div style="display: flex; justify-content: center; align-items: center;">
-							<button id="btn-depression" class="active">Depression</button>
-							<button id="btn-anxiety">Anxiety</button>
+						<div style="display: flex; justify-content: space-between; align-items: center;">
+							<div>
+								<button id="btn-depression" class="active">Depression</button>
+								<button id="btn-anxiety">Anxiety</button>
+							</div>
+							<div id="legend-banner" style="text-align: right;">
+								<h2 style="margin: 0;">Factors Correlating with <span
+										id="legend-title">Depression</span></h2>
+								<p style="margin: 0; font-size: 1.2em;">
+									<span class="legend red">positive</span>
+									<span class="legend green">negative</span>
+									<span class="legend white">radius = correlation</span>
+								</p>
+							</div>
 						</div>
 					</div>
+
+
 					<!-- both charts live here, but only one shows at a time -->
 					<div id="correlation-container">
 						<div id="correlation1"></div>
@@ -503,27 +503,24 @@
 					</div>
 				</div>
 			</div>
-	</div>
-	</section>
-	</div>
 
 
 
-	<!-- Scripts -->
-	<script src="assets/js/jquery.min.js"></script>
-	<script src="assets/js/jquery.scrolly.min.js"></script>
-	<script src="assets/js/jquery.dropotron.min.js"></script>
-	<script src="assets/js/jquery.scrollex.min.js"></script>
-	<script src="assets/js/browser.min.js"></script>
-	<script src="assets/js/breakpoints.min.js"></script>
-	<script src="assets/js/util.js"></script>
-	<script src="https://d3js.org/d3.v7.min.js"></script>
-	<script src="data/personas.js"></script>
-	<script src="assets/js/personas_viz.js"></script>
-	<script src="assets/js/main.js"></script>
-	<script src="assets/js/correlation1.js"></script>
-	<script src="assets/js/correlation2.js"></script>
-	<script src="assets/js/correlation-toggle.js"></script>
+			<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="https://d3js.org/d3.v7.min.js"></script>
+			<script src="data/personas.js"></script>
+			<script src="assets/js/personas_viz.js"></script>
+			<script src="assets/js/main.js"></script>
+			<script src="assets/js/correlation1.js"></script>
+			<script src="assets/js/correlation2.js"></script>
+			<script src="assets/js/correlation-toggle.js"></script>
 </body>
 
 </html>

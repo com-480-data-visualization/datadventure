@@ -4545,13 +4545,6 @@ body.no-scroll {
   transition: opacity 0.3s ease;
 }
 
-/* Lock section 1 to viewport */
-#one.locked {
-  height: 100vh;
-  overflow: hidden;
-}
-
-
 /* legend spacing */
 .legend-row {
 	margin: 1rem 0 2rem;
