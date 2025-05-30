@@ -356,8 +356,6 @@
 
 			<div class="content">
 				<div class="container">
-
-
 					<header>
 						<h2>
 							Play with the different sliders and see how music features predict a user's mental
@@ -393,23 +391,7 @@
 
 		<!-- Five -->
 		<!-- Five -->
-		<section id="five" class="spotlight style3 top">
-			<style>
-				@media (max-width: 768px) {
-					#five .content-wrapper {
-						flex-direction: column;
-					}
-
-					#five .text {
-						padding-right: 0;
-						margin-bottom: 2rem;
-					}
-
-					#five .image {
-						text-align: center;
-					}
-				}
-			</style>
+		<section id="five" class="spotlight style3 bottom">
 
 			<div class="content">
 				<div class="container">
@@ -456,28 +438,19 @@
 		<section id="six" class="spotlight style3 bottom" style="overflow: visible;">
 			<div class="content">
 				<div class="container">
-
-					<!-- the two toggle buttons -->
-					<!-- toggle buttons + inline legend -->
+					<h2 style="text-align: center;">More Significant Factors Correlating with Mental Health</span>
+					</h2>
+					<div style="text-align: center; display: block;">
+						<p class="legend red">positive</p>
+						<p class="legend green">negative</p>
+						<p class="legend">radius = correlation</p>
+					</div>
 					<div class="corr-toggle">
-						<div style="display: flex; justify-content: space-between; align-items: center;">
-							<div>
-								<button id="btn-depression" class="active">Depression</button>
-								<button id="btn-anxiety">Anxiety</button>
-							</div>
-							<div id="legend-banner" style="text-align: right;">
-								<h2 style="margin: 0;">Factors Correlating with <span
-										id="legend-title">Depression</span></h2>
-								<p style="margin: 0; font-size: 1.2em;">
-									<span class="legend red">positive</span>
-									<span class="legend green">negative</span>
-									<span class="legend white">radius = correlation</span>
-								</p>
-							</div>
+						<div style="display: flex; justify-content: center; align-items: center;">
+							<button id="btn-depression" class="active">Depression</button>
+							<button id="btn-anxiety">Anxiety</button>
 						</div>
 					</div>
-
-
 					<!-- both charts live here, but only one shows at a time -->
 					<div id="correlation-container">
 						<div id="correlation1"></div>
@@ -485,24 +458,27 @@
 					</div>
 				</div>
 			</div>
+	</div>
+	</section>
+	</div>
 
 
 
-			<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/jquery.dropotron.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="https://d3js.org/d3.v7.min.js"></script>
-			<script src="data/personas.js"></script>
-			<script src="assets/js/personas_viz.js"></script>
-			<script src="assets/js/main.js"></script>
-			<script src="assets/js/correlation1.js"></script>
-			<script src="assets/js/correlation2.js"></script>
-			<script src="assets/js/correlation-toggle.js"></script>
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.scrolly.min.js"></script>
+	<script src="assets/js/jquery.dropotron.min.js"></script>
+	<script src="assets/js/jquery.scrollex.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="https://d3js.org/d3.v7.min.js"></script>
+	<script src="data/personas.js"></script>
+	<script src="assets/js/personas_viz.js"></script>
+	<script src="assets/js/main.js"></script>
+	<script src="assets/js/correlation1.js"></script>
+	<script src="assets/js/correlation2.js"></script>
+	<script src="assets/js/correlation-toggle.js"></script>
 </body>
 
 </html>
